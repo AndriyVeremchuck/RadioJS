@@ -3,184 +3,792 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Радіо УКРАЇНИ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>Радіо УКРАЇНИ 🇺🇦</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0057b8;
+            --accent: #ffd700;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --card-hover: #ffffff;
+            --text: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b1329;
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        video#bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.35;
+            filter: brightness(0.7) blur(1px);
+            pointer-events: none;
+        }
+
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 50% 20%, rgba(0, 87, 184, 0.25), rgba(11, 19, 41, 0.85));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .app-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 24px 20px 140px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            margin-bottom: 8px;
+        }
+
+        header h1 span {
+            color: var(--accent);
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .controls-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 42px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box input::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-box input:focus {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            pointer-events: none;
+        }
+
+        .station-count {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
         .radio-container {
-            display: grid; /* Змінено на сітку */
-            grid-template-columns: repeat(3, 2fr); /* Три стовпчики */
-            gap: 15px; /* Відстань між елементами */
-            overflow-y: auto; /* Додає вертикальну прокрутку */
-            max-height: calc(100vh - 0px); /* Максимальна висота контейнера */
-            padding: 20px 0; /* Додано внутрішній відступ */
-            position: relative; /* Для перекриття фону */
-            z-index: 2; /* Відображення поверх фону */
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 20px;
         }
+
         .radio-item {
-            background-color: white;
-            border-radius: 30px;
-            box-shadow: 0 25px 35px rgba(1,0,0,0.1);
+            background-color: var(--card-bg);
+            border-radius: 22px;
+            padding: 16px 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             text-align: center;
             cursor: pointer;
-            transition: transform 1.3s;
-            height: 250px; /* Фіксована висота для карток */
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            border: 2px solid transparent;
+            user-select: none;
         }
-        .radio-item img {
-            width: 80%;
-            height: 80%; /* Встановлено висоту на 100% */
-            object-fit: fill; /* Вирівнює зображення */
-            object-position: center; /* Центрування зображення */
-        }
-        .radio-item p {
-            margin: 15px 0; /* Відстань між текстом */
-            font-size: 24px; /* Розмір шрифта для опису */
-        }
+
         .radio-item:hover {
-            transform: scale(0.7);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transform: translateY(-6px);
+            background-color: var(--card-hover);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+            border-color: rgba(0, 87, 184, 0.4);
         }
-        video {
+
+        .radio-item.playing {
+            border-color: #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+            background: #ffffff;
+            transform: translateY(-6px);
+        }
+
+        .radio-item.offline {
+            opacity: 0.65;
+            filter: grayscale(0.5);
+        }
+
+        .badge-status {
             position: absolute;
-            top: 0;
+            top: 10px;
+            right: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-offline {
+            background: #ef4444;
+            color: #ffffff;
+        }
+
+        .playing-indicator {
+            display: none;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            height: 14px;
+            align-items: flex-end;
+            gap: 2px;
+        }
+
+        .radio-item.playing .playing-indicator {
+            display: flex;
+        }
+
+        .playing-indicator span {
+            width: 3px;
+            background-color: #0057b8;
+            border-radius: 2px;
+            animation: bounce 0.8s infinite ease-in-out alternate;
+        }
+
+        .playing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .playing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            from { height: 4px; }
+            to { height: 14px; }
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .radio-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .radio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .radio-item p {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding: 0 6px;
+        }
+
+        /* Нижня панель плеєра */
+        .bottom-player {
+            position: fixed;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Заповнення фону відео */
-            z-index: 1; /* Відео позаду всіх інших елементів */
-            opacity: 1.5; /* Напівпрозорий фон */
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 24px;
+            z-index: 100;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
         }
-        
-        /* Медіа-запит для мобільних пристроїв */
+
+        .now-playing {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 220px;
+        }
+
+        .now-playing img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: #ffffff;
+            padding: 3px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .now-playing-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .now-playing-title {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .now-playing-status {
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #0057b8, #0080ff);
+            color: #ffffff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0, 87, 184, 0.4);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.08);
+            background: linear-gradient(135deg, #0066d6, #1a8cff);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94a3b8;
+        }
+
+        .volume-slider {
+            width: 100px;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
         @media (max-width: 768px) {
-            .radio-container {
-                grid-template-columns: repeat(2, 1fr); /* Два стовпчики для менших екранів */
+            header h1 {
+                font-size: 1.8rem;
             }
-        }
-        @media (max-width: 480px) {
-            .radio-container {
-                grid-template-columns: 2fr; /* Один стовпчик для ще менших екранів */
+            .bottom-player {
+                padding: 10px 16px;
+                justify-content: center;
+            }
+            .now-playing {
+                min-width: unset;
+                flex: 1;
+            }
+            .volume-control {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-<video autoplay muted loop>
+<video id="bg-video" autoplay muted loop playsinline>
     <source src="https://www.shutterstock.com/shutterstock/videos/1051965460/preview/stock-footage-at-the-college-house-costume-party-fun-guy-wearing-space-suit-dances-off-doing-funky-dance-moves.webm" type="video/mp4">
-
 </video>
+<div class="page-overlay"></div>
 
-<div class="radio-container" id="radioContainer">
-    <div class="radio-item" onclick="playRadio('http://212.26.132.129:8000/ArmyFM', this)">
-        <img src="https://cdn-radiotime-logos.tunein.com/s266878d.png" alt="Armiya FM">
-        <p>Armiya FM</p>
+<div class="app-wrapper">
+    <header>
+        <h1>🎵 Радіо <span>УКРАЇНИ</span> 🇺🇦</h1>
+        <p>Онлайн трансляція українських радіостанцій (RadioJS + Radio-Bash)</p>
+        
+        <div class="controls-bar">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Пошук радіостанції..." oninput="filterStations()">
+            </div>
+            <div class="station-count" id="stationCount">Станцій: 39</div>
+        </div>
+    </header>
+
+    <div class="radio-container" id="radioContainer">
+        <!-- Станції Radio-Bash та RadioJS -->
+        <div class="radio-item" data-name="Armiya FM Армія FM" onclick="playRadio('https://icecast.armyfm.com.ua:8443/ArmyFM', 'Armiya FM', 'logos/armiya-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/armiya-fm.png" alt="Armiya FM" onerror="this.src='https://cdn-radiotime-logos.tunein.com/s266878d.png'"></div>
+            <p>Armiya FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Hit FM Хіт FM" onclick="playRadio('https://online.hitfm.ua/HitFM', 'Hit FM', 'logos/hit-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/hit-fm.png" alt="Hit FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/3/3.v42.png'"></div>
+            <p>Hit FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Kiss FM Кісс FM" onclick="playRadio('https://online.kissfm.ua/KissFM', 'Kiss FM', 'logos/kiss-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/kiss-fm.png" alt="Kiss FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/1/1.v58.png'"></div>
+            <p>Kiss FM</p>
+        </div>
+
+        <div class="radio-item" data-name="DJ FM Діджей FM" onclick="playRadio('https://cast.brg.ua/djfm_main_public_mp3_hq', 'DJ FM', 'logos/dj-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/dj-fm.png" alt="DJ FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/9/9.v21.png'"></div>
+            <p>DJ FM</p>
+        </div>
+
+        <div class="radio-item" data-name="NRJ Ukraine Енерджі" onclick="playRadio('https://cast.mediaonline.net.ua/nrj', 'NRJ Ukraine', 'logos/nrj-ukraine.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/nrj-ukraine.png" alt="NRJ Ukraine" onerror="this.src='https://cdn.onlineradiobox.com/img/l/8/18.v12.png'"></div>
+            <p>NRJ Ukraine</p>
+        </div>
+
+        <div class="radio-item" data-name="Melodia FM Мелодія FM" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM', 'Melodia FM', 'logos/melodia-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/melodia-fm.png" alt="Melodia FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/6/26.v40.png'"></div>
+            <p>Melodia FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Classic Radio Класік Радіо" onclick="playRadio('https://online.classicradio.ua/ClassicRadio', 'Classic Radio', 'logos/classic-radio.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/classic-radio.png" alt="Classic Radio" onerror="this.src='https://www.classicradio.ua/static/img/Classic_sitelogo_300x210.png'"></div>
+            <p>Classic Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="Kraina FM Країна FM Дрімайко" onclick="playRadio('http://live.radioec.com.ua:8000/kiev', 'Kraina FM', 'logos/kraina-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/kraina-fm.png" alt="Kraina FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/2/172.v18.png'"></div>
+            <p>Kraina FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Hromadske Radio Громадське Радіо" onclick="playRadio('http://91.218.212.67:8000/stream-ps-hi', 'Hromadske Radio', 'logos/hromadske-radio.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/hromadske-radio.png" alt="Hromadske Radio" onerror="this.src='https://cdn.onlineradiobox.com/img/l/4/32014.v8.png'"></div>
+            <p>Hromadske Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="Українське Радіо: Казки Kazki" onclick="playRadio('http://radio.ukr.radio:8000/urkazka-mp3', 'Українське Радіо: Казки', 'logos/kazki.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/kazki.png" alt="Українське Радіо: Казки" onerror="this.src='https://ukr.radio/images/bank/prog/size2/prog_1675785860_63e27684cf0f5.png'"></div>
+            <p>УР: Казки</p>
+        </div>
+
+        <div class="radio-item" data-name="FM Galychyna FM Галичина Львів" onclick="playRadio('https://stream320.galychyna.fm/WebSite', 'FM Galychyna', 'logos/fm-galychyna.webp', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/fm-galychyna.webp" alt="FM Galychyna" onerror="this.src='https://galychyna.fm/img/inc.webp'"></div>
+            <p>FM Galychyna</p>
+        </div>
+
+        <div class="radio-item" data-name="Best FM Бест FM" onclick="playRadio('http://radio.bestfm.ua:8001/bestfm', 'Best FM', 'logos/best-fm.gif', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/best-fm.gif" alt="Best FM" onerror="this.src='http://www.proradio.org.ua/logos/bestfmbig.gif'"></div>
+            <p>Best FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Informator FM Інформатор FM" onclick="playRadio('https://main.inf.fm:8101/;', 'Informator FM', 'logos/informator-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/informator-fm.png" alt="Informator FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/2/352.v14.png'"></div>
+            <p>Informator FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Boguslav FM Богуслав FM" onclick="playRadio('https://complex.in.ua/b320', 'Boguslav FM', 'logos/boguslav-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/boguslav-fm.png" alt="Boguslav FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/5/68355.v23.png'"></div>
+            <p>Boguslav FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Brody FM Броди FM" onclick="playRadio('https://complex.in.ua/brodyHD', 'Brody FM', 'logos/brody-fm.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/brody-fm.jpg" alt="Brody FM" onerror="this.src='https://ukrtvr.org/images/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2/%D0%91%D1%80%D0%BE%D0%B4%D0%B8%20FM.jpg'"></div>
+            <p>Brody FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Buske Radio Буське Радіо" onclick="playRadio('https://complex.in.ua/buskfm', 'Buske Radio', 'logos/buske-radio.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/buske-radio.png" alt="Buske Radio" onerror="this.src='https://cdn.onlineradiobox.com/img/l/3/76203.v10.png'"></div>
+            <p>Buske Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="Буковинська хвиля 100,0 Bukovynska Khvylya" onclick="playRadio('http://185.233.118.107:8000/stream', 'Буковинська хвиля 100,0', 'logos/bukovynska-khvylya.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/bukovynska-khvylya.jpg" alt="Буковинська хвиля 100,0" onerror="this.src='https://ukrtvr.org/images/%D0%A7%D0%B5%D1%80%D0%BD%D1%96%D0%B2%D1%86%D1%96/%D0%91%D1%83%D0%BA%D0%BE%D0%B2%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0%20%D1%85%D0%B2%D0%B8%D0%BB%D1%8F.jpg'"></div>
+            <p>Буковинська хвиля</p>
+        </div>
+
+        <div class="radio-item" data-name="Lviv Duzhe Radio Дуже Радіо Львів" onclick="playRadio('https://ipradio.net:8443/duzheHD', 'Lviv Duzhe Radio', 'logos/duzhe-radio.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/duzhe-radio.png" alt="Lviv Duzhe Radio" onerror="this.src='https://cdn.onlineradiobox.com/img/l/8/74778.v11.png'"></div>
+            <p>Lviv Duzhe Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="Dnipro Europa Plus Європа Плюс Дніпро" onclick="playRadio('http://217.20.173.105:8100/live', 'Dnipro Europa Plus', 'logos/europa-plus-dnipro.gif', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/europa-plus-dnipro.gif" alt="Dnipro Europa Plus" onerror="this.src='http://www.proradio.org.ua/logos/euplusdneprbig.gif'"></div>
+            <p>Dnipro Europa Plus</p>
+        </div>
+
+        <div class="radio-item" data-name="Fresh FM Фреш FM" onclick="playRadio('http://193.53.83.3:8000/fresh-fm_mp3', 'Fresh FM', 'logos/fresh-fm.gif', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/fresh-fm.gif" alt="Fresh FM" onerror="this.src='http://www.proradio.org.ua/logos/freshfmbig.gif'"></div>
+            <p>Fresh FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Golos Prykarpattya Голос Прикарпаття Самбір" onclick="playRadio('https://complex.in.ua/stsambirAIR', 'Golos Prykarpattya', 'logos/golos-prykarpattya.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/golos-prykarpattya.jpg" alt="Golos Prykarpattya" onerror="this.src='https://ukrtvr.org/images/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2/%D0%93%D0%BE%D0%BB%D0%BE%D1%81%20%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%82%D1%8F.jpg'"></div>
+            <p>Голос Прикарпаття</p>
+        </div>
+
+        <div class="radio-item" data-name="Golos Stryia Голос Стрия" onclick="playRadio('https://complex.in.ua/struy', 'Golos Stryia', 'logos/golos-stryia.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/golos-stryia.png" alt="Golos Stryia" onerror="this.src='https://cdn.onlineradiobox.com/img/l/9/126269.v2.png'"></div>
+            <p>Golos Stryia</p>
+        </div>
+
+        <div class="radio-item" data-name="Hutsulska Stolytsya Гуцульська столиця Верховина" onclick="playRadio('http://91.228.217.226:8000/live', 'Hutsulska Stolytsya', 'logos/hutsulska-stolytsya.gif', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/hutsulska-stolytsya.gif" alt="Hutsulska Stolytsya" onerror="this.src='http://www.proradio.org.ua/logos/hutsulstolytsiabig.gif'"></div>
+            <p>Гуцульська столиця</p>
+        </div>
+
+        <div class="radio-item" data-name="Zhytomyr 106.1 FM Житомирська хвиля Суспільне" onclick="playRadio('http://91.218.213.49:8000/ur1-zt-mp3', 'Zhytomyr 106.1 FM', 'logos/zhytomyr-106fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/zhytomyr-106fm.png" alt="Zhytomyr 106.1 FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/4/124.v20.png'"></div>
+            <p>Zhytomyr 106.1 FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Kremenchuk Автохвиля Кременчук" onclick="playRadio('https://cast.mediaonline.net.ua/avtoradio320', 'Kremenchuk Автохвиля', 'logos/avtokhvylia.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/avtokhvylia.png" alt="Kremenchuk Автохвиля" onerror="this.src='https://cdn.onlineradiobox.com/img/l/0/147680.v2.png'"></div>
+            <p>Kremenchuk Автохвиля</p>
+        </div>
+
+        <div class="radio-item" data-name="ZFM Захід FM Закарпаття" onclick="playRadio('https://radio.zfm.com.ua:8443/zfm_128', 'ZFM', 'logos/zfm.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/zfm.jpg" alt="ZFM" onerror="this.src='https://ukrtvr.org/images/%D0%97%D0%B0%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%82%D1%8F/%D0%97%D0%B0%D1%85%D1%96%D0%B4%20FM+.jpg'"></div>
+            <p>ZFM</p>
+        </div>
+
+        <div class="radio-item" data-name="Lutsk Аверс FM Луцьк" onclick="playRadio('http://193.169.80.7:8001/efir', 'Lutsk Аверс FM', 'logos/avers-fm.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/avers-fm.jpg" alt="Lutsk Аверс FM" onerror="this.src='https://ukrtvr.org/images/%D0%92%D0%BE%D0%BB%D0%B8%D0%BD%D1%8C/%D0%90%D0%B2%D0%B5%D1%80%D1%81%20FM.jpg'"></div>
+            <p>Lutsk Аверс FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Bila Tserkva Blits FM Біла Церква Бліц FM" onclick="playRadio('https://stream.blits-fm.ua/stream320', 'Bila Tserkva Blits FM', 'logos/blits-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/blits-fm.png" alt="Bila Tserkva Blits FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/1/82891.v6.png'"></div>
+            <p>Bila Tserkva Blits FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Korosten New Day FM Коростень" onclick="playRadio('http://178.93.125.230:8000/newday.mp3', 'Korosten New Day FM', 'logos/new-day-fm.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/new-day-fm.jpg" alt="Korosten New Day FM" onerror="this.src='https://ukrtvr.org/images/%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80/%D0%9A%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B5%D0%BD%D1%8C%20FM.jpg'"></div>
+            <p>Korosten New Day FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Berehove Pulzus FM Берегове Пульс FM" onclick="playRadio('http://radio2.tirek.hu:8000/sionelo', 'Berehove Pulzus FM', 'logos/pulzus-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/pulzus-fm.png" alt="Berehove Pulzus FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/5/79365.v12.png'"></div>
+            <p>Berehove Pulzus FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Chernivtsi Radio 10 Чернівці Радіо 10" onclick="playRadio('http://91.205.207.98:8081/acc.mp3', 'Chernivtsi Radio 10', 'logos/radio-10.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/radio-10.png" alt="Chernivtsi Radio 10" onerror="this.src='https://ukrtvr.org/images/%D0%A7%D0%B5%D1%80%D0%BD%D1%96%D0%B2%D1%86%D1%96/%D0%A0%D0%B0%D0%B4%D1%96%D0%BE%2010.png'"></div>
+            <p>Chernivtsi Radio 10</p>
+        </div>
+
+        <div class="radio-item" data-name="Myrgorod Radio Myrgorod Миргород FM" onclick="playRadio('https://fm-potik.myrhorod.media/live', 'Myrgorod Radio Myrgorod', 'logos/myrgorod-fm.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/myrgorod-fm.jpg" alt="Myrgorod Radio Myrgorod" onerror="this.src='https://myrgorod.pl.ua/files/images/News/2020/06/04/02/bez_imeni-1.jpg'"></div>
+            <p>Myrgorod FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Radekhiv Radio Radekhiv Радехів" onclick="playRadio('http://194.44.230.64:8000/liveradio.mp3', 'Radekhiv Radio Radekhiv', 'logos/radio-radekhiv.jpg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/radio-radekhiv.jpg" alt="Radekhiv Radio Radekhiv" onerror="this.src='https://www.frocus.net/images/logotv/radio_radekhiv.jpg'"></div>
+            <p>Radio Radekhiv</p>
+        </div>
+
+        <div class="radio-item" data-name="Rivne Radio Sfera FM Рівне Сфера FM" onclick="playRadio('https://cdn-br2.live-tv.cloud/sferarvFM/320k/icecast.audio', 'Rivne Radio Sfera FM', 'logos/sfera-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/sfera-fm.png" alt="Rivne Radio Sfera FM" onerror="this.src='https://ukrtvr.org/images/%D0%A0%D1%96%D0%B2%D0%BD%D0%B5/%D0%A1%D1%84%D0%B5%D1%80%D0%B0%20FM.png'"></div>
+            <p>Radio Sfera FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Vinnytsya Radio Takt Вінниця Радіо Такт" onclick="playRadio('http://193.107.104.79:8007/taktonair.mp3', 'Vinnytsya Radio Takt', 'logos/radio-takt.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/radio-takt.png" alt="Vinnytsya Radio Takt" onerror="this.src='https://radiotakt.com.ua/sites/default/files/takt_logo.png'"></div>
+            <p>Vinnytsya Radio Takt</p>
+        </div>
+
+        <div class="radio-item" data-name="Berdychiv Rekord FM Бердичів Рекорд FM" onclick="playRadio('http://91.134.147.168:10058/stream', 'Berdychiv Rekord FM', 'logos/rekord-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img src="logos/rekord-fm.png" alt="Berdychiv Rekord FM" onerror="this.src='https://recordfm.com.ua/public/images/logo.png'"></div>
+            <p>Berdychiv Rekord FM</p>
+        </div>
+
+        <!-- Станції з тимчасово неактивним потоком (збережені з Radio-Bash/HTML) -->
+        <div class="radio-item offline" data-name="Akkerman FM Аккерман FM Білгород" onclick="playRadio('https://stream.zeno.fm/fs7e5zt06qzuv', 'Akkerman FM', 'logos/akkerman-fm.png', this)">
+            <span class="badge-status badge-offline">Офлайн</span>
+            <div class="img-wrapper"><img src="logos/akkerman-fm.png" alt="Akkerman FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/6/73236.v5.png'"></div>
+            <p>Akkerman FM</p>
+        </div>
+
+        <div class="radio-item offline" data-name="Borispol FM Бориспіль FM" onclick="playRadio('http://91.219.253.226:8000/borispilfm', 'Borispol FM', 'logos/borispol-fm.png', this)">
+            <span class="badge-status badge-offline">Офлайн</span>
+            <div class="img-wrapper"><img src="logos/borispol-fm.png" alt="Borispol FM" onerror="this.src='https://cdn.onlineradiobox.com/img/l/7/132467.v2.png'"></div>
+            <p>Borispol FM</p>
+        </div>
+
+        <div class="radio-item offline" data-name="Ladyzhyn Lada FM Ладижин Лада FM" onclick="playRadio('http://lada.fm:8000/radio2', 'Ladyzhyn Lada FM', 'logos/lada-fm.jpg', this)">
+            <span class="badge-status badge-offline">Офлайн</span>
+            <div class="img-wrapper"><img src="logos/lada-fm.jpg" alt="Ladyzhyn Lada FM" onerror="this.src='https://ladyzhyn.news/uploads/posts/2019-11/medium/1574061047_76900751_782912598827807_2580166809541935104_o.jpg'"></div>
+            <p>Ladyzhyn Lada FM</p>
+        </div>
     </div>
-	
-    <div class="radio-item" onclick="playRadio('https://online.hitfm.ua/HitFM', this)">
-        <img src="https://radioclub.ua/upload/images/stations/2023/79/82/657335ff5cf84_Logo_HitFM.png" alt="Hit FM">
-        <p>Hit FM</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('https://cast.mediaonline.net.ua/nrj', this)">
-        <img src="https://nrj.ua/images/NRJ.png" alt="NRJ Ukraine">
-        <p>NRJ Ukraine</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM', this)">
-        <img src="https://static.radioplayer.ua/radioplayer/logo/melodiafm/logo_melodiafm_int.png" alt="Melodia FM">
-        <p>Melodia FM</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('https://radio.zfm.com.ua:8443/zfm_128', this)">
-        <img src="https://ukrtvr.org/images/%D0%97%D0%B0%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D1%82%D1%8F/%D0%97%D0%B0%D1%85%D1%96%D0%B4%20FM+.jpg" alt="ZFM">
-        <p>ZFM</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('http://193.169.80.7:8001/efir', this)">
-        <img src="https://ukrtvr.org/images/%D0%92%D0%BE%D0%BB%D0%B8%D0%BD%D1%8C/%D0%90%D0%B2%D0%B5%D1%80%D1%81%20FM.jpg" alt="Efir">
-        <p>Lutsk Аверс FM</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('http://109.251.190.11:8888/live', this)">
-        <img src="https://zt.suspilne.media/cdn/1/image/2023/10/25/82b0b98302eacd82f6e193d3895ca4b6.jpg" alt="UR1">
-        <p>Zhytomyr 106.1 FM</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('https://radio.moa.org.ua/Avtohvylia', this)">
-        <img src="https://avtohvylia.com/wp-content/themes/radiohvilya/image/logo.png" alt="UR1">
-        <p>Kremenchuk Автохвиля</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('https://stream.blits-fm.ua/stream320', this)">
-        <img src="https://cdn.onlineradiobox.com/img/l/1/82891.v6.png" alt="UR1">
-        <p>Bila Tserkva	Blits FM</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('http://185.233.118.107:8000/stream	', this)">
-        <img src="https://ukrtvr.org/images/%D0%A7%D0%B5%D1%80%D0%BD%D1%96%D0%B2%D1%86%D1%96/%D0%91%D1%83%D0%BA%D0%BE%D0%B2%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0%20%D1%85%D0%B2%D0%B8%D0%BB%D1%8F.jpg" alt="UR1">
-        <p>Буковинська хвиля 100,0</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('https://ipradio.net:8443/duzheHD', this)">
-        <img src="https://cdn.onlineradiobox.com/img/l/8/74778.v11.png" alt="UR1">
-        <p>Lviv	Duzhe Radio</p>
-    </div>
-    <div class="radio-item" onclick="playRadio('http://217.20.173.105:8100/live', this)">
-        <img src="http://www.proradio.org.ua/logos/euplusdneprbig.gif" alt="UR1">
-        <p>Dnipro Europa Plus</p>
-    </div> 
-    <div class="radio-item" onclick="playRadio('http://lada.fm:8000/radio2', this)">
-       <img src="https://ladyzhyn.news/uploads/posts/2019-11/medium/1574061047_76900751_782912598827807_2580166809541935104_o.jpg" alt="UR1">
-        <p>Ladyzhyn Lada FM</p>
-    </div> 
-    <div class="radio-item" onclick="playRadio('http://178.93.125.230:8000/newday.mp3', this)">
-       <img src="https://ukrtvr.org/images/%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80/%D0%9A%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B5%D0%BD%D1%8C%20FM.jpg" alt="UR1">
-        <p>Korosten New Day FM</p>
-    </div> 
-    <div class="radio-item" onclick="playRadio('http://radio2.tirek.hu:8000/sionelo', this)">
-       <img src="https://cdn.onlineradiobox.com/img/l/5/79365.v12.png" alt="UR1">
-        <p>Berehove Pulzus FM</p>
-    </div>     
-    <div class="radio-item" onclick="playRadio('http://91.205.207.98:8081/acc.mp3', this)">
-       <img src="https://ukrtvr.org/images/%D0%A7%D0%B5%D1%80%D0%BD%D1%96%D0%B2%D1%86%D1%96/%D0%A0%D0%B0%D0%B4%D1%96%D0%BE%2010.png" alt="UR1">
-        <p>Chernivtsi	Radio 10</p>
-    </div>  
-    <div class="radio-item" onclick="playRadio('https://myrhorodfm.com.ua:8443/live', this)">
-       <img src="https://myrgorod.pl.ua/files/images/News/2020/06/04/02/bez_imeni-1.jpg" alt="UR1">
-        <p>Myrgorod	Radio Myrgorod</p>
-    </div>    
-    <div class="radio-item" onclick="playRadio('http://194.44.230.64:8000/liveradio.mp3', this)">
-       <img src="https://www.frocus.net/images/logotv/radio_radekhiv.jpg" alt="UR1">
-        <p>Radekhiv Radio Radekhiv</p>
-    </div>  
-    <div class="radio-item" onclick="playRadio('https://cdn-br2.live-tv.cloud/sferarvFM/320k/icecast.audio', this)">
-       <img src="https://ukrtvr.org/images/%D0%A0%D1%96%D0%B2%D0%BD%D0%B5/%D0%A1%D1%84%D0%B5%D1%80%D0%B0%20FM.png" alt="UR1">
-        <p>Rivne Radio Sfera FM</p>
-    </div>  
-    <div class="radio-item" onclick="playRadio('https://play.radiotakt.com.ua/', this)">
-       <img src="https://radiotakt.com.ua/sites/default/files/takt_logo.png" alt="UR1">
-        <p>Vinnytsya Radio Takt</p>
-    </div> 
-    <div class="radio-item" onclick="playRadio('http://91.134.147.168:10058/stream', this)">
-       <img src="https://recordfm.com.ua/public/images/logo.png	" alt="UR1">
-        <p>Berdychiv Rekord FM</p>
-    </div>                          
 </div>
 
-<audio id="audioPlayer" controls style="display:none;"></audio>
+<!-- Нижня панель керування -->
+<div class="bottom-player" id="bottomPlayer">
+    <div class="now-playing">
+        <img id="playerLogo" src="logos/hit-fm.png" alt="Radio Logo">
+        <div class="now-playing-info">
+            <span class="now-playing-title" id="playerTitle">Оберіть радіостанцію</span>
+            <span class="now-playing-status" id="playerStatus">Натисніть на станцію для прослуховування</span>
+        </div>
+    </div>
+
+    <div class="player-controls">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()" title="Відтворити / Зупинити">▶</button>
+    </div>
+
+    <div class="volume-control">
+        <span id="volumeIcon" onclick="toggleMute()" style="cursor:pointer;" title="Вимкнути звук">🔊</span>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="1" oninput="setVolume(this.value)">
+    </div>
+</div>
+
+<audio id="audioPlayer"></audio>
 
 <script>
     let currentAudio = null;
+    let currentElement = null;
+    let currentTitle = '';
+    let currentLogo = '';
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const playerTitle = document.getElementById('playerTitle');
+    const playerStatus = document.getElementById('playerStatus');
+    const playerLogo = document.getElementById('playerLogo');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const volumeIcon = document.getElementById('volumeIcon');
 
-    function playRadio(url, element) {
-        const audioPlayer = document.getElementById('audioPlayer');
-
-        // Якщо натиснута та ж радіостанція, зупинити
+    function playRadio(url, title, logo, element) {
+        // Якщо натиснута та ж радіостанція
         if (currentAudio === url) {
-            audioPlayer.pause();
-            currentAudio = null;
-        } else {
-            audioPlayer.src = url;
-            audioPlayer.play();
-            currentAudio = url;
+            if (audioPlayer.paused) {
+                audioPlayer.play().then(() => {
+                    updatePlaybackState(true);
+                }).catch(handlePlayError);
+            } else {
+                audioPlayer.pause();
+                updatePlaybackState(false);
+            }
+            return;
         }
+
+        // Очистити попередній активний елемент
+        if (currentElement) {
+            currentElement.classList.remove('playing');
+        }
+
+        currentAudio = url;
+        currentElement = element;
+        currentTitle = title;
+        currentLogo = logo;
+
+        playerTitle.textContent = title;
+        playerLogo.src = logo;
+        playerStatus.textContent = 'З\'єднання та буферизація...';
+        element.classList.add('playing');
+
+        audioPlayer.src = url;
+        audioPlayer.load();
+        
+        audioPlayer.play().then(() => {
+            updatePlaybackState(true);
+        }).catch(handlePlayError);
+    }
+
+    function togglePlay() {
+        if (!currentAudio) {
+            // Запустити першу станцію
+            const firstStation = document.querySelector('.radio-item:not(.offline)');
+            if (firstStation) firstStation.click();
+            return;
+        }
+
+        if (audioPlayer.paused) {
+            audioPlayer.play().then(() => {
+                updatePlaybackState(true);
+            }).catch(handlePlayError);
+        } else {
+            audioPlayer.pause();
+            updatePlaybackState(false);
+        }
+    }
+
+    function updatePlaybackState(isPlaying) {
+        if (isPlaying) {
+            playBtn.textContent = '⏸';
+            playerStatus.textContent = 'В ефірі 🟢';
+            if (currentElement) currentElement.classList.add('playing');
+        } else {
+            playBtn.textContent = '▶';
+            playerStatus.textContent = 'Зупинено ⏹';
+            if (currentElement) currentElement.classList.remove('playing');
+        }
+    }
+
+    function handlePlayError(err) {
+        console.warn('Помилка відтворення:', err);
+        playBtn.textContent = '▶';
+        playerStatus.textContent = 'Трансляція тимчасово недоступна ⚠️';
+        if (currentElement) currentElement.classList.remove('playing');
+    }
+
+    audioPlayer.addEventListener('playing', () => updatePlaybackState(true));
+    audioPlayer.addEventListener('pause', () => updatePlaybackState(false));
+    audioPlayer.addEventListener('waiting', () => {
+        playerStatus.textContent = 'Буферизація...';
+    });
+    audioPlayer.addEventListener('error', (e) => {
+        handlePlayError(e);
+    });
+
+    function setVolume(val) {
+        audioPlayer.volume = val;
+        volumeIcon.textContent = val == 0 ? '🔇' : (val < 0.5 ? '🔉' : '🔊');
+    }
+
+    function toggleMute() {
+        if (audioPlayer.volume > 0) {
+            audioPlayer.dataset.prevVolume = audioPlayer.volume;
+            setVolume(0);
+            volumeSlider.value = 0;
+        } else {
+            const prev = audioPlayer.dataset.prevVolume || 1;
+            setVolume(prev);
+            volumeSlider.value = prev;
+        }
+    }
+
+    function filterStations() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        const items = document.querySelectorAll('.radio-item');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+            const searchData = (item.getAttribute('data-name') || '').toLowerCase();
+            if (!query || searchData.includes(query)) {
+                item.style.display = 'flex';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        document.getElementById('stationCount').textContent = `Станцій: ${visibleCount}`;
     }
 </script>
 
 </body>
 </html>
+
 
