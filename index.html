@@ -982,6 +982,7 @@
 <audio id="audioPlayer" preload="none"></audio>
 
 <script>
+    let isUserPlaying = false;
     let currentAudio = null;
     let currentElement = null;
     const audioPlayer = document.getElementById('audioPlayer');
@@ -1018,23 +1019,28 @@
     }
 
     function handlePlayError(err) {
-        // Ігноруємо AbortError (викликається, коли користувач швидко перемикає станції або ставить на паузу)
         if (err && (err.name === 'AbortError' || err.code === 20)) {
             return;
         }
-        console.warn('Помилка відтворення:', err);
-        updatePlayState(false);
-        currentAudio = null;
-        currentElement = null;
+        console.warn('Попередження потоку / спроба відновлення:', err);
+        if (isUserPlaying && audioPlayer.src) {
+            setTimeout(() => {
+                if (isUserPlaying && audioPlayer.paused) {
+                    audioPlayer.play().catch(() => {});
+                }
+            }, 800);
+        }
     }
 
     function playRadio(url, title, logo, element) {
-        // Якщо клік по тій же активній радіостанції (перемикання Play / Pause)
+        // Якщо клік по тій же активній радіостанції (Play / Pause)
         if (currentAudio === url && currentElement === element) {
-            if (!audioPlayer.paused) {
+            if (!audioPlayer.paused && isUserPlaying) {
+                isUserPlaying = false;
                 audioPlayer.pause();
                 updatePlayState(false);
             } else {
+                isUserPlaying = true;
                 updatePlayState(true);
                 const playPromise = audioPlayer.play();
                 if (playPromise !== undefined) {
@@ -1044,36 +1050,43 @@
             return;
         }
 
-        // 1. Зняти статус відтворення з попередньої станції
+        // 1. Зняти виділення з попередньої станції
         if (currentElement) {
             currentElement.classList.remove('playing');
         }
 
+        isUserPlaying = true;
         currentAudio = url;
         currentElement = element;
         updatePlayState(true);
 
-        // 2. Зупинити старий потік, призначити новий URL та запустити
-        try {
-            audioPlayer.pause();
-            audioPlayer.src = url;
-            audioPlayer.load();
-
-            const playPromise = audioPlayer.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(handlePlayError);
-            }
-        } catch (e) {
-            handlePlayError(e);
+        // 2. Встановити потік та запустити без скидання пайплайну
+        audioPlayer.src = url;
+        const playPromise = audioPlayer.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(handlePlayError);
         }
     }
 
+    // Постійне безперервне утримання живого потоку
     audioPlayer.addEventListener('playing', () => {
-        updatePlayState(true);
+        if (isUserPlaying) {
+            updatePlayState(true);
+        }
+    });
+
+    audioPlayer.addEventListener('waiting', () => {
+        // Буферизація живого радіо не повинна зупиняти відтворення
+    });
+
+    audioPlayer.addEventListener('stalled', () => {
+        if (isUserPlaying && audioPlayer.paused) {
+            audioPlayer.play().catch(() => {});
+        }
     });
 
     audioPlayer.addEventListener('pause', () => {
-        if (audioPlayer.paused) {
+        if (!isUserPlaying) {
             updatePlayState(false);
         }
     });
