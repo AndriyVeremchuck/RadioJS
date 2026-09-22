@@ -56,93 +56,6 @@
             pointer-events: none;
         }
 
-        .disco-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 2;
-            overflow: hidden;
-            mix-blend-mode: screen;
-            opacity: 0.40;
-        }
-
-        .disco-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(65px);
-            opacity: 0.55;
-            mix-blend-mode: screen;
-            will-change: transform;
-            pointer-events: none;
-        }
-
-        .orb-1 {
-            top: 5%;
-            left: 10%;
-            width: 480px;
-            height: 480px;
-            background: radial-gradient(circle, #00d2ff, #0057b8 70%, transparent 100%);
-            animation: orbFloat1 24s infinite ease-in-out;
-        }
-
-        .orb-2 {
-            top: 45%;
-            right: 8%;
-            width: 520px;
-            height: 520px;
-            background: radial-gradient(circle, #ffd700, #ff7b00 65%, transparent 100%);
-            animation: orbFloat2 28s infinite ease-in-out;
-        }
-
-        .orb-3 {
-            bottom: 5%;
-            left: 25%;
-            width: 460px;
-            height: 460px;
-            background: radial-gradient(circle, #ff007f, #7928ca 70%, transparent 100%);
-            animation: orbFloat3 22s infinite ease-in-out;
-        }
-
-        .orb-4 {
-            top: 25%;
-            left: 55%;
-            width: 420px;
-            height: 420px;
-            background: radial-gradient(circle, #00ffcc, #0070f3 70%, transparent 100%);
-            animation: orbFloat4 26s infinite ease-in-out;
-        }
-
-        .disco-strobe {
-            display: none;
-        }
-
-        @keyframes orbFloat1 {
-            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            33% { transform: translate3d(70px, 50px, 0) scale(1.12); }
-            66% { transform: translate3d(-40px, 80px, 0) scale(0.95); }
-        }
-
-        @keyframes orbFloat2 {
-            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            33% { transform: translate3d(-80px, -60px, 0) scale(1.15); }
-            66% { transform: translate3d(50px, -40px, 0) scale(0.92); }
-        }
-
-        @keyframes orbFloat3 {
-            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            33% { transform: translate3d(60px, -50px, 0) scale(1.1); }
-            66% { transform: translate3d(-70px, 30px, 0) scale(0.96); }
-        }
-
-        @keyframes orbFloat4 {
-            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            33% { transform: translate3d(-50px, 70px, 0) scale(1.18); }
-            66% { transform: translate3d(60px, -30px, 0) scale(0.94); }
-        }
-
         .app-wrapper {
             position: relative;
             z-index: 10;
@@ -384,14 +297,6 @@
     <source src="https://www.shutterstock.com/shutterstock/videos/1051965460/preview/stock-footage-at-the-college-house-costume-party-fun-guy-wearing-space-suit-dances-off-doing-funky-dance-moves.webm" type="video/webm">
 </video>
 <div class="page-overlay"></div>
-
-<div class="disco-background" id="discoBg">
-    <div class="disco-orb orb-1"></div>
-    <div class="disco-orb orb-2"></div>
-    <div class="disco-orb orb-3"></div>
-    <div class="disco-orb orb-4"></div>
-    <div class="disco-strobe" id="discoStrobe"></div>
-</div>
 
 <div class="app-wrapper">
     <header>
