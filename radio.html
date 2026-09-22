@@ -223,7 +223,7 @@
             overflow: hidden;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.3s ease, filter 0.3s ease;
             height: 140px;
             display: flex;
             flex-direction: column;
@@ -243,19 +243,57 @@
             z-index: 2;
         }
 
-        .radio-item.playing {
-            border-color: #ffd700;
-            box-shadow: 0 0 0 2px #ffd700, 0 8px 24px rgba(255, 215, 0, 0.35);
-            z-index: 3;
-            animation: pulseActive 2.4s infinite ease-in-out;
+        /* Затемнення інших карток на 10% під час відтворення */
+        body.is-playing .radio-item:not(.playing) {
+            opacity: 0.90;
+            filter: brightness(0.90);
         }
 
-        @keyframes pulseActive {
-            0%, 100% {
-                transform: scale(1);
+        body.is-playing .radio-item:not(.playing):hover {
+            opacity: 1;
+            filter: brightness(1);
+            transform: translateY(-4px) scale(1.02);
+            z-index: 4;
+        }
+
+        .radio-item.playing {
+            border-color: #ffd700;
+            background: #ffffff;
+            box-shadow: 0 0 0 2px #ffd700, 0 0 22px rgba(255, 215, 0, 0.7), 0 0 32px rgba(0, 87, 184, 0.35);
+            z-index: 5;
+            opacity: 1 !important;
+            filter: brightness(1) !important;
+            transform-origin: center center;
+            animation: bellRingAnimation 2.2s infinite ease-in-out;
+        }
+
+        @keyframes bellRingAnimation {
+            0% {
+                transform: scale(0.92) rotate(0deg);
             }
-            50% {
-                transform: scale(0.97);
+            5% {
+                transform: scale(0.92) rotate(7deg);
+            }
+            10% {
+                transform: scale(0.92) rotate(-6deg);
+            }
+            15% {
+                transform: scale(0.92) rotate(5deg);
+            }
+            20% {
+                transform: scale(0.92) rotate(-4deg);
+            }
+            25% {
+                transform: scale(0.92) rotate(2deg);
+            }
+            30% {
+                transform: scale(0.92) rotate(0deg);
+            }
+            65% {
+                transform: scale(0.92) rotate(0deg);
+            }
+            100% {
+                transform: scale(0.92) rotate(0deg);
             }
         }
 
