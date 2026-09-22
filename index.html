@@ -31,6 +31,31 @@
             position: relative;
         }
 
+        video#bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.60;
+            pointer-events: none;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 50% 20%, rgba(7, 11, 25, 0.45), rgba(7, 11, 25, 0.85));
+            z-index: 1;
+            pointer-events: none;
+        }
+
         .disco-background {
             position: fixed;
             top: 0;
@@ -38,9 +63,10 @@
             width: 100vw;
             height: 100vh;
             pointer-events: none;
-            z-index: 1;
+            z-index: 2;
             overflow: hidden;
-            background: radial-gradient(circle at 50% 15%, #0f1c3f 0%, #070b19 75%);
+            mix-blend-mode: screen;
+            opacity: 0.40;
         }
 
         .disco-orb {
@@ -117,13 +143,9 @@
             66% { transform: translate3d(60px, -30px, 0) scale(0.94); }
         }
 
-        .page-overlay {
-            display: none;
-        }
-
         .app-wrapper {
             position: relative;
-            z-index: 2;
+            z-index: 10;
             max-width: 1076px;
             margin: 0 auto;
             padding: 24px 20px 40px;
@@ -357,6 +379,11 @@
     </style>
 </head>
 <body>
+
+<video id="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="https://www.shutterstock.com/shutterstock/videos/1051965460/preview/stock-footage-at-the-college-house-costume-party-fun-guy-wearing-space-suit-dances-off-doing-funky-dance-moves.webm" type="video/webm">
+</video>
+<div class="page-overlay"></div>
 
 <div class="disco-background" id="discoBg">
     <div class="disco-orb orb-1"></div>
