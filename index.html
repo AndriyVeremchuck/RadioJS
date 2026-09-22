@@ -914,6 +914,14 @@
 <audio id="audioPlayer" preload="none"></audio>
 
 <script>
+    const bgVideo = document.getElementById('bg-video');
+    if (bgVideo) {
+        bgVideo.playbackRate = 0.5;
+        bgVideo.addEventListener('play', () => {
+            bgVideo.playbackRate = 0.5;
+        });
+    }
+
     let isUserPlaying = false;
     let currentAudio = null;
     let currentElement = null;
