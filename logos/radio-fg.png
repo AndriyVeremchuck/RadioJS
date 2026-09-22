@@ -1,3 +1,16 @@
-<html lang="uk"> <head>   <script nonce="61p05Dgoxx7HYoCXl4rCsQ">window.google = {};(function(){
-var d=/^\s*(?!javascript:)(?:[\w+.-]+:|[^:/?#]*(?:[/?#]|$))/i;
-(this||self).google.navigateTo=function(a,c,b){!/\/.*?[&?]gsc=1/.test(c.location.href)&&a!==c&&a.google?a.google.r&&(a.google.r=0,a=a.location,b=d.test(b)?b:void 0,b!==void 0&&(a.href=b),c.location.replace("about:blank")):c.location.replace(b)};}).call(this);(function(){var redirectUrl='https://play.google.com/store/apps/details?id\x3dcom.radiofg.radiofg\x26hl\x3dfr';google.navigateTo(parent,window,redirectUrl);})();</script> <noscript> <meta content="0;url=https://play.google.com/store/apps/details?id=com.radiofg.radiofg&amp;hl=fr" http-equiv="refresh"> </noscript> </head>  </html>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="120" height="120">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0057b8"/>
+      <stop offset="50%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#ffd700"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#0f172a"/>
+  <g filter="url(#glow)">
+    <path d="M20 50 A30 30 0 0 1 80 50 V65 A8 8 0 0 1 72 73 H66 A8 8 0 0 1 58 65 V55 A8 8 0 0 1 66 47 H76 V50 A26 26 0 0 0 24 50 V47 H34 A8 8 0 0 1 42 55 V65 A8 8 0 0 1 34 73 H28 A8 8 0 0 1 20 65 Z" fill="url(#grad)"/>
+  </g>
+</svg>
