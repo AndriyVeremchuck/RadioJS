@@ -94,27 +94,28 @@
         }
 
         .radio-item {
-            background-color: #ffffff;
+            background-color: #d9d9d9;
             border-radius: 16px;
             padding: 12px 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.3s ease, filter 0.3s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.3s ease, filter 0.3s ease, background-color 0.25s ease;
             height: 140px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             position: relative;
-            border: 2px solid rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             user-select: none;
             will-change: transform;
             contain: content;
         }
 
         .radio-item:hover {
+            background-color: #e5e7eb;
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
             border-color: rgba(0, 87, 184, 0.6);
@@ -618,10 +619,10 @@
             <p>Радіо Трек</p>
         </div>
 
-        <div class="radio-item" data-name="Перець FM Стильне Радіо Гумор Музика" onclick="playRadio('https://radio.perec.fm/radio-stilnoe', 'Перець FM', 'logos/radio-perec-fm.png', this)">
+        <div class="radio-item" data-name="Radio ROKS Classic Rock Рокс Рок Музика" onclick="playRadio('https://online.radioroks.ua/RadioROKS_ClassicRock', 'Radio ROKS Classic Rock', 'logos/radio-roks.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-perec-fm.png" alt="Перець FM" onerror="handleImgError(this)"></div>
-            <p>Перець FM</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks.png" alt="Radio ROKS Classic Rock" onerror="handleImgError(this)"></div>
+            <p>Radio ROKS Classic</p>
         </div>
 
         <div class="radio-item" data-name="Прямий FM Прямий канал Інформаційне" onclick="playRadio('https://cast.mediaonline.net.ua/prmfm320', 'Прямий FM', 'logos/radio-pryamiy-fm.png', this)">
