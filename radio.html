@@ -11,7 +11,7 @@
         :root {
             --primary: #0057b8;
             --accent: #ffd700;
-            --card-bg: rgba(255, 255, 255, 0.92);
+            --card-bg: #ffffff;
             --card-hover: #ffffff;
             --text: #1e293b;
         }
@@ -24,35 +24,16 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0b1329;
+            background: radial-gradient(circle at 50% 0%, #172554 0%, #0b1329 60%, #050b1a 100%);
+            background-attachment: fixed;
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
-        video#bg-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: 0;
-            opacity: 0.75;
-            filter: brightness(0.95) contrast(1.05);
-            pointer-events: none;
-        }
-
         .page-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at 50% 20%, rgba(0, 87, 184, 0.10), rgba(11, 19, 41, 0.45));
-            z-index: 1;
-            pointer-events: none;
+            display: none;
         }
 
         .app-wrapper {
@@ -93,82 +74,46 @@
         }
 
         .radio-item {
-            background-color: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background-color: #ffffff;
             border-radius: 16px;
             padding: 12px 10px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.28s ease, filter 0.28s ease, box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
             height: 140px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             position: relative;
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.15);
             user-select: none;
-            filter: brightness(0.92) grayscale(0) opacity(0.92);
+            will-change: transform;
+            contain: content;
         }
 
         .radio-item:hover {
-            transform: translateY(-5px) scale(1.06);
-            background-color: #ffffff;
-            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
-            border-color: rgba(0, 87, 184, 0.55);
-            filter: brightness(1) grayscale(0) opacity(1);
-            z-index: 4;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 87, 184, 0.6);
+            z-index: 2;
         }
 
         .radio-item.playing {
             border-color: #ffd700;
-            background: #ffffff;
-            z-index: 5;
-            filter: brightness(1) grayscale(0) opacity(1);
-            transform-origin: center center;
-            animation: bellRingAnimation 2.2s infinite ease-in-out;
+            box-shadow: 0 0 0 2px #ffd700, 0 8px 24px rgba(255, 215, 0, 0.35);
+            z-index: 3;
+            animation: pulseActive 2.4s infinite ease-in-out;
         }
 
-        @keyframes bellRingAnimation {
-            0% {
-                transform: scale(0.90) rotate(0deg);
-                box-shadow: 0 0 14px rgba(255, 215, 0, 0.4), 0 0 24px rgba(0, 87, 184, 0.25);
+        @keyframes pulseActive {
+            0%, 100% {
+                transform: scale(1);
             }
-            5% {
-                transform: scale(0.90) rotate(7deg);
-                box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-            }
-            10% {
-                transform: scale(0.90) rotate(-6deg);
-                box-shadow: 0 0 24px rgba(255, 215, 0, 0.85);
-            }
-            15% {
-                transform: scale(0.90) rotate(5deg);
-                box-shadow: 0 0 22px rgba(255, 215, 0, 0.75);
-            }
-            20% {
-                transform: scale(0.90) rotate(-4deg);
-                box-shadow: 0 0 18px rgba(255, 215, 0, 0.65);
-            }
-            25% {
-                transform: scale(0.90) rotate(2deg);
-                box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-            }
-            30% {
-                transform: scale(0.90) rotate(0deg);
-                box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
-            }
-            /* Плавна повільна пауза/дихання перед наступним дзвінком */
-            65% {
-                transform: scale(0.90) rotate(0deg);
-                box-shadow: 0 0 14px rgba(255, 215, 0, 0.45), 0 0 20px rgba(0, 87, 184, 0.2);
-            }
-            100% {
-                transform: scale(0.90) rotate(0deg);
-                box-shadow: 0 0 14px rgba(255, 215, 0, 0.4), 0 0 24px rgba(0, 87, 184, 0.25);
+            50% {
+                transform: scale(0.97);
             }
         }
 
@@ -198,7 +143,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            height: 13px;
+            height: 14px;
             align-items: flex-end;
             gap: 2.5px;
         }
@@ -209,17 +154,24 @@
 
         .playing-indicator span {
             width: 3px;
+            height: 14px;
             background-color: #0057b8;
             border-radius: 2px;
-            animation: bounce 0.8s infinite ease-in-out alternate;
+            transform-origin: bottom;
+            animation: barBounce 0.8s infinite ease-in-out alternate;
         }
 
-        .playing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-        .playing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        .playing-indicator span:nth-child(1) { animation-delay: 0s; }
+        .playing-indicator span:nth-child(2) { animation-delay: 0.25s; }
+        .playing-indicator span:nth-child(3) { animation-delay: 0.5s; }
 
-        @keyframes bounce {
-            from { height: 3px; }
-            to { height: 13px; }
+        @keyframes barBounce {
+            0% {
+                transform: scaleY(0.2);
+            }
+            100% {
+                transform: scaleY(1);
+            }
         }
 
         .img-wrapper {
@@ -235,11 +187,11 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         .radio-item:hover img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
 
         .radio-item p {
@@ -259,7 +211,7 @@
             -webkit-user-drag: none;
         }
 
-                @media (max-width: 1024px) {
+        @media (max-width: 1024px) {
             .radio-container {
                 grid-template-columns: repeat(4, minmax(0, 1fr));
             }
@@ -282,11 +234,6 @@
     </style>
 </head>
 <body>
-
-<video id="bg-video" autoplay muted loop playsinline>
-    <source src="https://www.shutterstock.com/shutterstock/videos/1051965460/preview/stock-footage-at-the-college-house-costume-party-fun-guy-wearing-space-suit-dances-off-doing-funky-dance-moves.webm" type="video/mp4">
-</video>
-<div class="page-overlay"></div>
 
 <div class="app-wrapper">
     <header>
@@ -926,14 +873,6 @@
     let currentAudio = null;
     let currentElement = null;
     const audioPlayer = document.getElementById('audioPlayer');
-    const bgVideo = document.getElementById('bg-video');
-
-    if (bgVideo) {
-        bgVideo.playbackRate = 0.45;
-        bgVideo.addEventListener('loadedmetadata', function() {
-            bgVideo.playbackRate = 0.45;
-        });
-    }
 
     const MUSIC_PLACEHOLDERS = Array.from({ length: 20 }, function(_, i) {
         return 'logos/placeholders/music-' + (i + 1) + '.svg';
