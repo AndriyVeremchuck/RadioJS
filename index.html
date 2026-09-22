@@ -979,10 +979,12 @@
     </div>
 </div>
 
+<audio id="audioPlayer" preload="none"></audio>
+
 <script>
     let currentAudio = null;
     let currentElement = null;
-    let audioPlayer = null;
+    const audioPlayer = document.getElementById('audioPlayer');
 
     const MUSIC_PLACEHOLDERS = Array.from({ length: 20 }, function(_, i) {
         return 'logos/placeholders/music-' + (i + 1) + '.svg';
@@ -1015,78 +1017,70 @@
         }
     }
 
-    function cleanupPlayer() {
-        updatePlayState(false);
-        if (audioPlayer) {
-            audioPlayer.onplaying = null;
-            audioPlayer.onpause = null;
-            audioPlayer.onerror = null;
-            try {
-                audioPlayer.pause();
-                audioPlayer.removeAttribute('src');
-                audioPlayer.src = '';
-                audioPlayer.load();
-            } catch (e) {}
-            audioPlayer = null;
-        }
-    }
-
     function handlePlayError(err) {
-        console.warn('Помилка або зупинка відтворення:', err);
+        // Ігноруємо AbortError (викликається, коли користувач швидко перемикає станції або ставить на паузу)
+        if (err && (err.name === 'AbortError' || err.code === 20)) {
+            return;
+        }
+        console.warn('Помилка відтворення:', err);
         updatePlayState(false);
         currentAudio = null;
         currentElement = null;
-        cleanupPlayer();
     }
 
     function playRadio(url, title, logo, element) {
-        // Якщо натиснута та ж сама активна радіостанція (перемикання Play / Pause)
+        // Якщо клік по тій же активній радіостанції (перемикання Play / Pause)
         if (currentAudio === url && currentElement === element) {
-            if (audioPlayer && !audioPlayer.paused) {
+            if (!audioPlayer.paused) {
                 audioPlayer.pause();
                 updatePlayState(false);
-            } else if (audioPlayer) {
-                currentElement = element;
+            } else {
                 updatePlayState(true);
-                audioPlayer.play().catch(handlePlayError);
+                const playPromise = audioPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(handlePlayError);
+                }
             }
             return;
         }
 
-        // 1. Зняти виділення з попередньої станції
+        // 1. Зняти статус відтворення з попередньої станції
         if (currentElement) {
             currentElement.classList.remove('playing');
         }
-
-        // 2. Повністю звільнити попередній медіа-буфер і аудіопотік для очищення оперативної пам'яті
-        cleanupPlayer();
 
         currentAudio = url;
         currentElement = element;
         updatePlayState(true);
 
-        // 3. Створити чистий екземпляр Audio з вимкненим попереднім кешуванням
-        audioPlayer = new Audio();
-        audioPlayer.preload = 'none';
-        audioPlayer.src = url;
+        // 2. Зупинити старий потік, призначити новий URL та запустити
+        try {
+            audioPlayer.pause();
+            audioPlayer.src = url;
+            audioPlayer.load();
 
-        audioPlayer.onplaying = () => {
-            updatePlayState(true);
-        };
-
-        audioPlayer.onpause = () => {
-            updatePlayState(false);
-        };
-
-        audioPlayer.onerror = (e) => {
+            const playPromise = audioPlayer.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(handlePlayError);
+            }
+        } catch (e) {
             handlePlayError(e);
-        };
-
-        const playPromise = audioPlayer.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(handlePlayError);
         }
     }
+
+    audioPlayer.addEventListener('playing', () => {
+        updatePlayState(true);
+    });
+
+    audioPlayer.addEventListener('pause', () => {
+        if (audioPlayer.paused) {
+            updatePlayState(false);
+        }
+    });
+
+    audioPlayer.addEventListener('error', (e) => {
+        handlePlayError(e);
+    });
 </script>
 
 </body>
