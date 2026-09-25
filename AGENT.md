@@ -8,15 +8,17 @@
 
 ## 1. Головні правила та обмеження (Strict Constraints)
 
-1. **Мова спілкування:** Завжди відповідати користувачеві **виключно українською мовою**.
-2. **Чистота Git:** 
-   - Жодні службові скрипти, бази даних та плейлисти (`radio_manager.py`, `stations.json`, `stations.db`, `app_state.json`, `*.py`, `*.m3u*`, `AGENT.md`, `PLAN.md`, `__pycache__/`) **НЕ повинні потрапляти в Git**.
-   - Вони налаштовані у локальних виключеннях: `/home/dusha/RadioJS/.git/info/exclude`.
-   - Перед завершенням будь-якої відповіді завжди перевіряйте `git status`, дерево має залишатися чистим.
+1. **Мова спілкування та Git:** 
+   - Завжди спілкуватися з користувачем **виключно українською мовою**.
+   - **Усі повідомлення комітів у Git обов'язково писати українською мовою** (англійська заборонена).
+2. **Локальний Git:** 
+   - Проєкт ведеться у локальній гілці `desktop-manager-local`.
+   - Файли коду (`radio_manager.py`), документації (`AGENT.md`, `PLAN.md`, `README.md`) та бази даних версіонуються локально.
+   - Тимчасові файли (`*.log`, `*.tmp`, `*.bak`, `__pycache__/`) ігноруються через `.gitignore`.
 3. **Робочі каталоги:**
    - Поточний робочий worktree: `/home/dusha/copilot-worktrees/RadioJS/andriyveremchuck-ubiquitous-bassoon`
    - Основний репозиторій: `/home/dusha/RadioJS`
-   - Гілка Git: `andriyveremchuck-import-radio-bash-stations`
+   - Локальна гілка: `desktop-manager-local`
    - При збереженні бази станцій зберігати як локальний `JSON_PATH` (`APP_DIR / "stations.json"`), так і синхронізувати в `ALT_JSON_PATH` (`/home/dusha/RadioJS/stations.json`).
 4. **Перевірка після змін:**
    - Після будь-яких правок обов'язково тестувати синтаксис: `python3 -m py_compile radio_manager.py`.
