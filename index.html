@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="logos/hit-fm.png">
+    <link rel="apple-touch-icon" href="logos/hit-fm.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Радіо УКРАЇНИ 🇺🇦</title>
@@ -1104,7 +1106,12 @@
         if (err && (err.name === 'AbortError' || err.code === 20)) {
             return;
         }
-        console.warn('Попередження потоку / спроба відновлення:', err);
+        if (err && (err.name === 'NotSupportedError' || err.code === 9)) {
+            console.warn('Формат або кодек потоку не підтримується браузером:', currentAudio);
+            updatePlayState(false);
+            isUserPlaying = false;
+            return;
+        }
         if (isUserPlaying && audioPlayer.src) {
             setTimeout(() => {
                 if (isUserPlaying && audioPlayer.paused) {
