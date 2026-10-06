@@ -301,278 +301,410 @@
 
 <div class="app-wrapper">
     <header>
-        <h1>🎵 Радіо <span>УКРАЇНИ</span> 🇺🇦</h1>
+        <h1>🎵 Радіо <span>УКРАЇНИ & СВІТУ</span> 🎵</h1>
     </header>
 
     <div class="radio-container" id="radioContainer">
-        <div class="radio-item" data-name="Armiya FM Армія FM" onclick="playRadio('https://icecast.armyfm.com.ua:8443/ArmyFM', 'Armiya FM', 'logos/armiya-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/armiya-fm.png" alt="Armiya FM" onerror="handleImgError(this)"></div>
-            <p>Armiya FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Hit FM Хіт FM" onclick="playRadio('https://online.hitfm.ua/HitFM', 'Hit FM', 'logos/hit-fm.png', this)">
+        <div class="radio-item" data-name="Хіт FM Hit FM Поп Хіти" onclick="playRadio('https://online.hitfm.ua/HitFM', 'Hit FM', 'logos/hit-fm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
             <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm.png" alt="Hit FM" onerror="handleImgError(this)"></div>
             <p>Hit FM</p>
         </div>
 
-        <div class="radio-item" data-name="NRJ Ukraine Енерджі" onclick="playRadio('https://cast.mediaonline.net.ua/nrj', 'NRJ Ukraine', 'logos/nrj-ukraine.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/nrj-ukraine.png" alt="NRJ Ukraine" onerror="handleImgError(this)"></div>
-            <p>NRJ Ukraine</p>
-        </div>
-
-        <div class="radio-item" data-name="Melodia FM Мелодія FM" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM', 'Melodia FM', 'logos/melodia-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/melodia-fm.png" alt="Melodia FM" onerror="handleImgError(this)"></div>
-            <p>Melodia FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Kraina FM Країна FM Дрімайко" onclick="playRadio('http://live.radioec.com.ua:8000/kiev', 'Kraina FM', 'logos/kraina-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kraina-fm.png" alt="Kraina FM" onerror="handleImgError(this)"></div>
-            <p>Kraina FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Buske Radio Буське Радіо" onclick="playRadio('https://complex.in.ua/buskfm', 'Buske Radio', 'logos/buske-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/buske-radio.png" alt="Buske Radio" onerror="handleImgError(this)"></div>
-            <p>Buske Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="Буковинська хвиля 100.0 Bukovynska Khvylya" onclick="playRadio('http://185.233.118.107:8000/stream', 'Буковинська хвиля 100.0', 'logos/bukovynska-khvylya.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/bukovynska-khvylya.jpg" alt="Буковинська хвиля 100.0" onerror="handleImgError(this)"></div>
-            <p>Буковинська хвиля 100.0</p>
-        </div>
-
-        <div class="radio-item" data-name="Lviv Duzhe Radio Дуже Радіо Львів" onclick="playRadio('https://ipradio.net:8443/duzheHD', 'Lviv Duzhe Radio', 'logos/duzhe-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/duzhe-radio.png" alt="Lviv Duzhe Radio" onerror="handleImgError(this)"></div>
-            <p>Lviv Duzhe Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="Dnipro Europa Plus Європа Плюс Дніпро" onclick="playRadio('http://217.20.173.105:8100/live', 'Dnipro Europa Plus', 'logos/europa-plus-dnipro.gif', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/europa-plus-dnipro.gif" alt="Dnipro Europa Plus" onerror="handleImgError(this)"></div>
-            <p>Dnipro Europa Plus</p>
-        </div>
-
-        <div class="radio-item" data-name="Golos Stryia Голос Стрия" onclick="playRadio('https://complex.in.ua/struy', 'Golos Stryia', 'logos/golos-stryia.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/golos-stryia.png" alt="Golos Stryia" onerror="handleImgError(this)"></div>
-            <p>Golos Stryia</p>
-        </div>
-
-        <div class="radio-item" data-name="Kremenchuk Автохвиля Кременчук" onclick="playRadio('https://cast.mediaonline.net.ua/avtoradio320', 'Kremenchuk Автохвиля', 'logos/avtokhvylia.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/avtokhvylia.png" alt="Kremenchuk Автохвиля" onerror="handleImgError(this)"></div>
-            <p>Kremenchuk Автохвиля</p>
-        </div>
-
-        <div class="radio-item" data-name="ZFM Захід FM Закарпаття" onclick="playRadio('https://radio.zfm.com.ua:8443/zfm_128', 'ZFM', 'logos/zfm.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/zfm.jpg" alt="ZFM" onerror="handleImgError(this)"></div>
-            <p>ZFM</p>
-        </div>
-
-        <div class="radio-item" data-name="Lutsk Аверс FM Луцьк" onclick="playRadio('http://193.169.80.7:8001/efir', 'Lutsk Аверс FM', 'logos/avers-fm.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/avers-fm.jpg" alt="Lutsk Аверс FM" onerror="handleImgError(this)"></div>
-            <p>Lutsk Аверс FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Korosten New Day FM Коростень" onclick="playRadio('http://178.93.125.230:8000/newday.mp3', 'Korosten New Day FM', 'logos/new-day-fm.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/new-day-fm.jpg" alt="Korosten New Day FM" onerror="handleImgError(this)"></div>
-            <p>Korosten New Day FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Radekhiv Radio Radekhiv Радехів" onclick="playRadio('http://194.44.230.64:8000/liveradio.mp3', 'Radekhiv Radio Radekhiv', 'logos/radio-radekhiv.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-radekhiv.jpg" alt="Radekhiv Radio Radekhiv" onerror="handleImgError(this)"></div>
-            <p>Radekhiv Radio Radekhiv</p>
-        </div>
-
-        <div class="radio-item" data-name="Berdychiv Rekord FM Бердичів Рекорд FM" onclick="playRadio('http://91.134.147.168:10058/stream', 'Berdychiv Rekord FM', 'logos/rekord-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/rekord-fm.png" alt="Berdychiv Rekord FM" onerror="handleImgError(this)"></div>
-            <p>Berdychiv Rekord FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio ROKS Радіо Рокс Київ Рок" onclick="playRadio('https://online.radioroks.ua/RadioROKS', 'Radio ROKS', 'logos/radio-roks.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks.png" alt="Radio ROKS" onerror="handleImgError(this)"></div>
-            <p>Radio ROKS</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Relax Радіо Релакс Спокійна музика" onclick="playRadio('https://online.radiorelax.ua/RadioRelax', 'Radio Relax', 'logos/ua/site-radiorelax-ua.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiorelax-ua.png" alt="Radio Relax" onerror="handleImgError(this)"></div>
-            <p>Radio Relax</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Jazz Радіо Джаз" onclick="playRadio('https://online.radiojazz.ua/RadioJazz', 'Radio Jazz', 'logos/radio-jazz.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz.png" alt="Radio Jazz" onerror="handleImgError(this)"></div>
-            <p>Radio Jazz</p>
-        </div>
-
-        <div class="radio-item" data-name="Люкс FM Lux FM Київ Хіти" onclick="playRadio('https://lux.radio.tvstitch.com/kyiv/lux_adv_sd', 'Люкс FM', 'logos/lux-fm.png', this)">
+        <div class="radio-item" data-name="Люкс FM Lux FM Поп Хіти" onclick="playRadio('https://icecast.luxnet.ua/lux', 'Люкс FM', 'logos/lux-fm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
             <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/lux-fm.png" alt="Люкс FM" onerror="handleImgError(this)"></div>
             <p>Люкс FM</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Максимум Maximum FM Поп Рок" onclick="playRadio('https://lux.radio.tvstitch.com/kyiv/max_adv_sd', 'Радіо Максимум', 'logos/radio-maximum.png', this)">
+        <div class="radio-item" data-name="Kiss FM Клубна Танцювальна" onclick="playRadio('https://online.kissfm.ua/KissFM', 'Kiss FM', 'logos/kiss-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm.png" alt="Kiss FM" onerror="handleImgError(this)"></div>
+            <p>Kiss FM</p>
+        </div>
+
+        <div class="radio-item" data-name="NRJ Ukraine Енерджі Топ Хіти" onclick="playRadio('https://cast.mediaonline.net.ua/nrj', 'NRJ Ukraine', 'logos/nrj-ukraine.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/nrj-ukraine.png" alt="NRJ Ukraine" onerror="handleImgError(this)"></div>
+            <p>NRJ Ukraine</p>
+        </div>
+
+        <div class="radio-item" data-name="Melodia FM Мелодія Ретро Поп" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM', 'Melodia FM', 'logos/melodia-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/melodia-fm.png" alt="Melodia FM" onerror="handleImgError(this)"></div>
+            <p>Melodia FM</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live House Хаус Клубна Електроніка" onclick="playRadio('https://stream.sunshine-live.de/house/mp3-192/stream.sunshine-live.de/', 'Sunshine House', 'logos/sunshine-trance.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/sunshine-trance.png" alt="Sunshine House" onerror="handleImgError(this)"></div>
+            <p>Sunshine House</p>
+        </div>
+
+        <div class="radio-item" data-name="Наше Радіо Nashe Radio Українські пісні" onclick="playRadio('https://online.nasheradio.ua/NasheRadio', 'Наше Радіо', 'logos/nashe-radio.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/nashe-radio.png" alt="Наше Радіо" onerror="handleImgError(this)"></div>
+            <p>Наше Радіо</p>
+        </div>
+
+        <div class="radio-item" data-name="FM Galychyna FM Галичина Львів" onclick="playRadio('https://stream320.galychyna.fm/WebSite', 'FM Galychyna', 'logos/fm-galychyna.webp', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/fm-galychyna.webp" alt="FM Galychyna" onerror="handleImgError(this)"></div>
+            <p>FM Galychyna</p>
+        </div>
+
+        <div class="radio-item" data-name="Радіо Максимум Maximum FM Поп Рок Хіти" onclick="playRadio('https://icecast.luxnet.ua/maximum', 'Радіо Максимум', 'logos/radio-maximum.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
             <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-maximum.png" alt="Радіо Максимум" onerror="handleImgError(this)"></div>
             <p>Радіо Максимум</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Nostalgie Ностальжі 99.0 FM Ретро" onclick="playRadio('https://lux.radio.tvstitch.com/kyiv/nst_adv_sd', 'Радіо Nostalgie', 'logos/radio-nostalgie.png', this)">
+        <div class="radio-item" data-name="Radio Nostalgie Ностальжі Ретро" onclick="playRadio('https://icecast.luxnet.ua/nostalgie', 'Радіо Nostalgie', 'logos/radio-nostalgie.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
             <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-nostalgie.png" alt="Радіо Nostalgie" onerror="handleImgError(this)"></div>
             <p>Радіо Nostalgie</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо NV Радіо НВ Новини Розмови" onclick="playRadio('https://online-radio.nv.ua/radionv.mp3', 'Радіо NV', 'logos/ua/radio-nv.png', this)">
+        <div class="radio-item" data-name="Радіо Пятниця Pyatnitsa Народні Хіти" onclick="playRadio('https://cast.mediaonline.net.ua/radiopyatnica', 'Радіо Пятниця', 'logos/radio-pyatnitsa.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-nv.png" alt="Радіо NV" onerror="handleImgError(this)"></div>
-            <p>Радіо NV</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-pyatnitsa.png" alt="Радіо Пятниця" onerror="handleImgError(this)"></div>
+            <p>Радіо Пятниця</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Промінь Суспільне Promin Новини Музика" onclick="playRadio('http://radio.ukr.radio:8000/ur2-mp3-m', 'Радіо Промінь', 'logos/radio-promin.png', this)">
+        <div class="radio-item" data-name="Авторадіо Avtoradio Ukraine" onclick="playRadio('https://cast.mediaonline.net.ua/avtoradio', 'Авторадіо Україна', 'logos/avtoradio-ukraine.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-promin.png" alt="Радіо Промінь" onerror="handleImgError(this)"></div>
-            <p>Радіо Промінь</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/avtoradio-ukraine.png" alt="Авторадіо Україна" onerror="handleImgError(this)"></div>
+            <p>Авторадіо Україна</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Культура Суспільне Kultura Література Театр" onclick="playRadio('http://radio.ukr.radio:8000/ur3-mp3-m', 'Радіо Культура', 'logos/radio-kultura.png', this)">
+        <div class="radio-item" data-name="Radio BOB AC DC Канал Легенди Року" onclick="playRadio('https://streams.radiobob.de/bob-acdc/mp3-192/streams.radiobob.de/', 'Radio BOB! AC/DC', 'logos/placeholders/music-14.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-kultura.png" alt="Радіо Культура" onerror="handleImgError(this)"></div>
-            <p>Радіо Культура</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-14.svg" alt="Radio BOB! AC/DC" onerror="handleImgError(this)"></div>
+            <p>BOB! AC/DC</p>
         </div>
 
-        <div class="radio-item" data-name="Українське Радіо Суспільне UR-1 Перший канал" onclick="playRadio('http://radio.ukr.radio:8000/ur1-mp3-m', 'Українське Радіо', 'logos/ukrainske-radio-ur1.png', this)">
+        <div class="radio-item" data-name="SomaFM Underground 80s Синтіпоп Нью Вейв 80-ті" onclick="playRadio('https://ice5.somafm.com/u80s-128-mp3', 'Underground 80s', 'logos/somafm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ukrainske-radio-ur1.png" alt="Українське Радіо" onerror="handleImgError(this)"></div>
-            <p>Українське Радіо</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="Underground 80s" onerror="handleImgError(this)"></div>
+            <p>Underground 80s</p>
         </div>
 
-        <div class="radio-item" data-name="Наше Радіо Nashe Radio Тільки українське" onclick="playRadio('https://online.nasheradio.ua/NasheRadio', 'Наше Радіо', 'logos/ua/fix-nashe-radio.png', this)">
+        <div class="radio-item" data-name="Radio Relax Live Релакс Лайв Спокійна Музика" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Live', 'Radio Relax Live', 'logos/radio-relax.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/fix-nashe-radio.png" alt="Наше Радіо" onerror="handleImgError(this)"></div>
-            <p>Наше Радіо</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-relax.png" alt="Radio Relax Live" onerror="handleImgError(this)"></div>
+            <p>Radio Relax Live</p>
         </div>
 
-        <div class="radio-item" data-name="Lounge FM Лаунж ФМ Електронна релакс" onclick="playRadio('https://cast.mediaonline.net.ua/loungefm', 'Lounge FM', 'logos/ua/site-loungefm-com-ua.png', this)">
+        <div class="radio-item" data-name="Radio Relax Cafe Релакс Кафе Спокійна Музика" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Cafe', 'Radio Relax Cafe', 'logos/radio-relax-cafe.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-loungefm-com-ua.png" alt="Lounge FM" onerror="handleImgError(this)"></div>
-            <p>Lounge FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Київ FM 98.0 Kyiv FM Столиця" onclick="playRadio('https://cdn.vsnw.net:8943/kyiv_fm_128k', 'Київ FM 98.0', 'logos/ua/fix-kyiv-fm-98-0.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/fix-kyiv-fm-98-0.png" alt="Київ FM 98.0" onerror="handleImgError(this)"></div>
-            <p>Київ FM 98.0</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Трек Radio Trek Рівне 106.4 FM" onclick="playRadio('https://cast.radiotrek.rv.ua:8433/MP3_320', 'Радіо Трек', 'logos/radio-trek.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-trek.png" alt="Радіо Трек" onerror="handleImgError(this)"></div>
-            <p>Радіо Трек</p>
-        </div>
-
-        <div class="radio-item" data-name="Прямий FM Прямий канал Інформаційне" onclick="playRadio('https://cast.mediaonline.net.ua/prmfm320', 'Прямий FM', 'logos/ua/fix-priamyi-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/fix-priamyi-fm.png" alt="Прямий FM" onerror="handleImgError(this)"></div>
-            <p>Прямий FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Gold UA Золоті Хіти Ретро" onclick="playRadio('https://online.radioplayer.ua/RadioGold', 'Radio Gold UA', 'logos/placeholders/music-12.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-12.svg" alt="Radio Gold UA" onerror="handleImgError(this)"></div>
-            <p>Radio Gold UA</p>
-        </div>
-
-        <div class="radio-item" data-name="Закарпаття FM Мукачево Ужгород 101.9 FM" onclick="playRadio('http://195.234.148.51:8000/stream', 'Закарпаття FM', 'logos/ua/site-zfm-com-ua.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-zfm-com-ua.jpg" alt="Закарпаття FM" onerror="handleImgError(this)"></div>
-            <p>Закарпаття FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Megapolis FM Кривий Ріг 105.2 FM Танцювальна" onclick="playRadio('https://cast.megapolis.fm/listen/kryvyi_rih/radio.mp3', 'Megapolis FM', 'logos/megapolis-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/megapolis-fm.png" alt="Megapolis FM" onerror="handleImgError(this)"></div>
-            <p>Megapolis FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio ROKS Ballads Рок Балади" onclick="playRadio('https://online.radioroks.ua/RadioROKS_Ballads', 'Radio ROKS Ballads', 'logos/radio-roks-ballads.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-ballads.png" alt="Radio ROKS Ballads" onerror="handleImgError(this)"></div>
-            <p>Radio ROKS Ballads</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio ROKS Український Рок Ukr Rock" onclick="playRadio('https://online.radioroks.ua/RadioROKS_Ukr_HD', 'Radio ROKS Український Рок', 'logos/radio-roks-ukr-rock.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-ukr-rock.png" alt="Radio ROKS Український Рок" onerror="handleImgError(this)"></div>
-            <p>Radio ROKS Український Рок</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Relax International Інтернешнл Релакс" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Int', 'Radio Relax International', 'logos/ua/site-radiorelax-ua.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiorelax-ua.png" alt="Radio Relax International" onerror="handleImgError(this)"></div>
-            <p>Radio Relax International</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Relax Cafe Кафе Спокій" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Cafe', 'Radio Relax Cafe', 'logos/ua/site-radiorelax-ua.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiorelax-ua.png" alt="Radio Relax Cafe" onerror="handleImgError(this)"></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-relax-cafe.png" alt="Radio Relax Cafe" onerror="handleImgError(this)"></div>
             <p>Radio Relax Cafe</p>
         </div>
 
-        <div class="radio-item" data-name="Radio Jazz Gold Золотий Джаз" onclick="playRadio('https://online.radiojazz.ua/RadioJazz_Gold', 'Radio Jazz Gold', 'logos/ua/site-radiojazz-ua.jpg', this)">
+        <div class="radio-item" data-name="Radio Relax Instrumental Інструментальна Спокійна Музика" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Instrumental_HD', 'Relax Instrumental', 'logos/radio-relax-instrumental.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiojazz-ua.jpg" alt="Radio Jazz Gold" onerror="handleImgError(this)"></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-relax-instrumental.png" alt="Relax Instrumental" onerror="handleImgError(this)"></div>
+            <p>Relax Instrumental</p>
+        </div>
+
+        <div class="radio-item" data-name="Radio Relax International Інтернешнл Релакс" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Int', 'Relax International', 'logos/radio-relax-int.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-relax-int.png" alt="Relax International" onerror="handleImgError(this)"></div>
+            <p>Relax International</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Groove Salad Чіллаут Ембієнт Релакс Спокійна" onclick="playRadio('https://ice5.somafm.com/groovesalad-128-mp3', 'Groove Salad Chill', 'logos/somafm-groovesalad.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm-groovesalad.png" alt="Groove Salad Chill" onerror="handleImgError(this)"></div>
+            <p>Groove Salad Chill</p>
+        </div>
+
+        <div class="radio-item" data-name="Antenne Bayern Chillout Чіллаут Релакс Спокійна" onclick="playRadio('https://s2-webradio.antenne.de/chillout', 'Bayern Chillout', 'logos/placeholders/music-15.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-15.svg" alt="Bayern Chillout" onerror="handleImgError(this)"></div>
+            <p>Bayern Chillout</p>
+        </div>
+
+        <div class="radio-item" data-name="Smooth Chill UK Смут Чілл Лаунж Спокійна" onclick="playRadio('https://media-the.musicradio.com/SmoothChillMP3', 'Smooth Chill UK', 'logos/smooth-chill.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/smooth-chill.png" alt="Smooth Chill UK" onerror="handleImgError(this)"></div>
+            <p>Smooth Chill UK</p>
+        </div>
+
+        <div class="radio-item" data-name="Radio Swiss Classic Швейцарська Класика Релакс" onclick="playRadio('https://stream.srg-ssr.ch/m/rsc_de/mp3_128', 'Swiss Classic', 'logos/placeholders/music-15.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-15.svg" alt="Swiss Classic" onerror="handleImgError(this)"></div>
+            <p>Swiss Classic</p>
+        </div>
+
+        <div class="radio-item" data-name="Classic Radio Класичне Радіо Шедеври Класики" onclick="playRadio('https://online.classicradio.ua/ClassicRadio', 'Classic Radio', 'logos/classic-radio.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/classic-radio.png" alt="Classic Radio" onerror="handleImgError(this)"></div>
+            <p>Classic Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="Classic FM UK Класика Класична Музика" onclick="playRadio('https://media-the.musicradio.com/ClassicFMMP3', 'Classic FM UK', 'logos/placeholders/music-7.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-7.svg" alt="Classic FM UK" onerror="handleImgError(this)"></div>
+            <p>Classic FM UK</p>
+        </div>
+
+        <div class="radio-item" data-name="Radio Paradise Mellow Релакс Чілл Спокійна" onclick="playRadio('https://stream.radioparadise.com/mellow-192', 'Radio Paradise Mellow', 'logos/placeholders/music-16.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-16.svg" alt="Radio Paradise Mellow" onerror="handleImgError(this)"></div>
+            <p>Radio Paradise Mellow</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live Chillout Електронний Релакс" onclick="playRadio('https://stream.sunshine-live.de/chillout/mp3-192/stream.sunshine-live.de/', 'Sunshine Chillout', 'logos/sunshine-trance.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/sunshine-trance.png" alt="Sunshine Chillout" onerror="handleImgError(this)"></div>
+            <p>Sunshine Chillout</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Drone Zone Енігматік Ембієнт Містика Enigmatic" onclick="playRadio('https://ice5.somafm.com/dronezone-128-mp3', 'Drone Zone Enigmatic', 'logos/somafm-dronezone.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm-dronezone.png" alt="Drone Zone Enigmatic" onerror="handleImgError(this)"></div>
+            <p>Drone Zone Enigmatic</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Deep Space One Космічний Ембієнт Ambient Space" onclick="playRadio('https://ice5.somafm.com/deepspaceone-128-mp3', 'Deep Space One', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="Deep Space One" onerror="handleImgError(this)"></div>
+            <p>Deep Space One</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Space Station Спейс Стейшн Ембієнт Чілл" onclick="playRadio('https://ice5.somafm.com/spacestation-128-mp3', 'Space Station Soma', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="Space Station Soma" onerror="handleImgError(this)"></div>
+            <p>Space Station Soma</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Lush Ніжний Вокальний Чілл Lush Vocals" onclick="playRadio('https://ice5.somafm.com/lush-128-mp3', 'SomaFM Lush', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM Lush" onerror="handleImgError(this)"></div>
+            <p>SomaFM Lush</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Synphaera Нео Ембієнт Синтезатор Space Music" onclick="playRadio('https://ice5.somafm.com/synphaera-128-mp3', 'SomaFM Synphaera', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM Synphaera" onerror="handleImgError(this)"></div>
+            <p>SomaFM Synphaera</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Suburbs of Goa Східний Чілл Дезі Бітс Mystic" onclick="playRadio('https://ice5.somafm.com/suburbsofgoa-128-mp3', 'Suburbs of Goa', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="Suburbs of Goa" onerror="handleImgError(this)"></div>
+            <p>Suburbs of Goa</p>
+        </div>
+
+        <div class="radio-item" data-name="Lounge FM Лаунж ФМ Електронна Релакс" onclick="playRadio('https://cast.mediaonline.net.ua/loungefm', 'Lounge FM', 'logos/lounge-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/lounge-fm.png" alt="Lounge FM" onerror="handleImgError(this)"></div>
+            <p>Lounge FM</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Secret Agent Лаунж Шпигунський Lounge Spy" onclick="playRadio('https://ice5.somafm.com/secretagent-128-mp3', 'Secret Agent Lounge', 'logos/somafm-secretagent.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm-secretagent.png" alt="Secret Agent Lounge" onerror="handleImgError(this)"></div>
+            <p>Secret Agent Lounge</p>
+        </div>
+
+        <div class="radio-item" data-name="Radio Swiss Jazz Швейцарський Джаз Лаунж" onclick="playRadio('https://stream.srg-ssr.ch/m/rsj/mp3_128', 'Swiss Jazz', 'logos/placeholders/music-9.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-9.svg" alt="Swiss Jazz" onerror="handleImgError(this)"></div>
+            <p>Swiss Jazz</p>
+        </div>
+
+        <div class="radio-item" data-name="Radio Jazz Gold Золота Колекція Джазу" onclick="playRadio('https://online.radiojazz.ua/RadioJazz_Gold', 'Radio Jazz Gold', 'logos/radio-jazz-gold.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz-gold.png" alt="Radio Jazz Gold" onerror="handleImgError(this)"></div>
             <p>Radio Jazz Gold</p>
         </div>
 
-        <div class="radio-item" data-name="Radio Jazz Light Легкий Джаз" onclick="playRadio('https://online.radiojazz.ua/RadioJazz_Light', 'Radio Jazz Light', 'logos/ua/site-radiojazz-ua.jpg', this)">
+        <div class="radio-item" data-name="Radio Jazz Light Легкий Джаз" onclick="playRadio('https://online.radiojazz.ua/RadioJazz_Light', 'Radio Jazz Light', 'logos/radio-jazz-light.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiojazz-ua.jpg" alt="Radio Jazz Light" onerror="handleImgError(this)"></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz-light.png" alt="Radio Jazz Light" onerror="handleImgError(this)"></div>
             <p>Radio Jazz Light</p>
         </div>
 
-        <div class="radio-item" data-name="Hit FM Top Hits Хіт ФМ Топ Хіти" onclick="playRadio('https://online.hitfm.ua/HitFM_Top', 'Hit FM Top Hits', 'logos/hit-fm-top-hits.png', this)">
+        <div class="radio-item" data-name="Radio Jazz Groove Радіо Джаз Грув" onclick="playRadio('https://online.radiojazz.ua/RadioJazz_Groove', 'Jazz Groove', 'logos/radio-jazz.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-top-hits.png" alt="Hit FM Top Hits" onerror="handleImgError(this)"></div>
-            <p>Hit FM Top Hits</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz.png" alt="Jazz Groove" onerror="handleImgError(this)"></div>
+            <p>Jazz Groove</p>
         </div>
 
-        <div class="radio-item" data-name="Hit FM Найбільші Хіти Best Hits" onclick="playRadio('https://online.hitfm.ua/HitFM_Best', 'Hit FM Найбільші Хіти', 'logos/hit-fm-best-hits.png', this)">
+        <div class="radio-item" data-name="Smooth Radio UK Смут Радіо Соул Поп" onclick="playRadio('https://media-the.musicradio.com/SmoothUKMP3', 'Smooth Radio UK', 'logos/smooth-chill.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-best-hits.png" alt="Hit FM Найбільші Хіти" onerror="handleImgError(this)"></div>
-            <p>Hit FM Найбільші Хіти</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/smooth-chill.png" alt="Smooth Radio UK" onerror="handleImgError(this)"></div>
+            <p>Smooth Radio UK</p>
         </div>
 
-        <div class="radio-item" data-name="Hit FM Українські Хіти Ukrainian Hits" onclick="playRadio('https://online.hitfm.ua/HitFM_Ukr', 'Hit FM Українські Хіти', 'logos/hit-fm-ua-hits.png', this)">
+        <div class="radio-item" data-name="Radio Monte Carlo Монте Карло Лаунж Елеганс" onclick="playRadio('https://icecast.unitedradio.it/RMC.mp3', 'Radio Monte Carlo', 'logos/placeholders/music-8.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-ua-hits.png" alt="Hit FM Українські Хіти" onerror="handleImgError(this)"></div>
-            <p>Hit FM Українські Хіти</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-8.svg" alt="Radio Monte Carlo" onerror="handleImgError(this)"></div>
+            <p>Radio Monte Carlo</p>
         </div>
 
-        <div class="radio-item" data-name="Kiss FM Deep Кісс ФМ Діп Хаус" onclick="playRadio('https://online.kissfm.ua/KissFM_Deep', 'Kiss FM Deep', 'logos/kiss-fm-deep.png', this)">
+        <div class="radio-item" data-name="SomaFM Fluid Флюїд Інструментальний Хіп-Хоп Джаз" onclick="playRadio('https://ice5.somafm.com/fluid-128-mp3', 'SomaFM Fluid', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM Fluid" onerror="handleImgError(this)"></div>
+            <p>SomaFM Fluid</p>
+        </div>
+
+        <div class="radio-item" data-name="Amsterdam Trance Амстердам Транс Вокал Ейфорія" onclick="playRadio('https://strm112.1.fm/atr_mobile_mp3', 'Amsterdam Trance', 'logos/placeholders/music-7.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-7.svg" alt="Amsterdam Trance" onerror="handleImgError(this)"></div>
+            <p>Amsterdam Trance</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live Trance Саншайн Лайв Транс Ейфорія" onclick="playRadio('https://stream.sunshine-live.de/live/mp3-192/stream.sunshine-live.de/', 'Sunshine Trance', 'logos/sunshine-trance.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/sunshine-trance.png" alt="Sunshine Trance" onerror="handleImgError(this)"></div>
+            <p>Sunshine Trance</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live EDM Фестивальний Транс Денс" onclick="playRadio('https://stream.sunshine-live.de/edm/mp3-192/stream.sunshine-live.de/', 'Sunshine EDM', 'logos/sunshine-trance.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/sunshine-trance.png" alt="Sunshine EDM" onerror="handleImgError(this)"></div>
+            <p>Sunshine EDM</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Dub Step Beyond Дабстеп Бейс Електроніка" onclick="playRadio('https://ice5.somafm.com/dubstep-128-mp3', 'Dub Step Beyond', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="Dub Step Beyond" onerror="handleImgError(this)"></div>
+            <p>Dub Step Beyond</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live Rave Рейв Хардкор Енергія" onclick="playRadio('https://stream.sunshine-live.de/rave/mp3-192/stream.sunshine-live.de/', 'Sunshine Rave', 'logos/placeholders/music-10.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-10.svg" alt="Sunshine Rave" onerror="handleImgError(this)"></div>
+            <p>Sunshine Rave</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live Techno Техно Берлін Електроніка" onclick="playRadio('https://stream.sunshine-live.de/techno/mp3-192/stream.sunshine-live.de/', 'Sunshine Techno', 'logos/placeholders/music-12.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-12.svg" alt="Sunshine Techno" onerror="handleImgError(this)"></div>
+            <p>Sunshine Techno</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live 90er Рейв 90-х Євроденс Хіти" onclick="playRadio('https://stream.sunshine-live.de/90er/mp3-192/stream.sunshine-live.de/', 'Sunshine Live 90er', 'logos/placeholders/music-11.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-11.svg" alt="Sunshine Live 90er" onerror="handleImgError(this)"></div>
+            <p>Sunshine Live 90er</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live Hardstyle Хардстайл Потужний Бас" onclick="playRadio('https://stream.sunshine-live.de/hardstyle/mp3-192/stream.sunshine-live.de/', 'Sunshine Hardstyle', 'logos/placeholders/music-18.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-18.svg" alt="Sunshine Hardstyle" onerror="handleImgError(this)"></div>
+            <p>Sunshine Hardstyle</p>
+        </div>
+
+        <div class="radio-item" data-name="Sunshine Live Drum and Bass Драм енд Бейс DnB" onclick="playRadio('https://stream.sunshine-live.de/drumnbass/mp3-192/stream.sunshine-live.de/', 'Sunshine Drum & Bass', 'logos/placeholders/music-19.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-19.svg" alt="Sunshine Drum & Bass" onerror="handleImgError(this)"></div>
+            <p>Sunshine Drum & Bass</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM DEF CON Radio Електронний Рейв Хакер Бітс" onclick="playRadio('https://ice5.somafm.com/defcon-128-mp3', 'SomaFM DEF CON', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM DEF CON" onerror="handleImgError(this)"></div>
+            <p>SomaFM DEF CON</p>
+        </div>
+
+        <div class="radio-item" data-name="Dance Wave Денс Вейв Клубна Електронна" onclick="playRadio('https://dancewave.online/dance.mp3', 'Dance Wave', 'logos/dancewave.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/dancewave.png" alt="Dance Wave" onerror="handleImgError(this)"></div>
+            <p>Dance Wave</p>
+        </div>
+
+        <div class="radio-item" data-name="Kiss FM Deep Діп Хаус Релакс" onclick="playRadio('https://online.kissfm.ua/KissFM_Deep', 'Kiss FM Deep', 'logos/kiss-fm-deep.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
             <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm-deep.png" alt="Kiss FM Deep" onerror="handleImgError(this)"></div>
             <p>Kiss FM Deep</p>
         </div>
 
-        <div class="radio-item" data-name="Melodia FM Romantic Мелодія Романтика Спокійна" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM_Romantic', 'Melodia FM Romantic', 'logos/melodia-fm.png', this)">
+        <div class="radio-item" data-name="Kiss FM Ukrainian Український Денс Клуб" onclick="playRadio('https://online.kissfm.ua/KissFM_Ukr', 'Kiss FM Ukrainian', 'logos/kiss-fm-ukrainian.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/melodia-fm.png" alt="Melodia FM Romantic" onerror="handleImgError(this)"></div>
-            <p>Melodia FM Romantic</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm-ukrainian.png" alt="Kiss FM Ukrainian" onerror="handleImgError(this)"></div>
+            <p>Kiss FM Ukrainian</p>
+        </div>
+
+        <div class="radio-item" data-name="Kiss FM Digital Цифровий Денс Саунд" onclick="playRadio('https://online.kissfm.ua/KissFM_Digital', 'Kiss FM Digital', 'logos/kiss-fm-digital.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm-digital.png" alt="Kiss FM Digital" onerror="handleImgError(this)"></div>
+            <p>Kiss FM Digital</p>
+        </div>
+
+        <div class="radio-item" data-name="Ibiza Global Radio Ібіца Глобал Електронна Денс" onclick="playRadio('https://listenssl.ibizaglobalradio.com:8024/ibizaglobalradio.mp3', 'Ibiza Global Radio', 'logos/ibiza-global.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ibiza-global.png" alt="Ibiza Global Radio" onerror="handleImgError(this)"></div>
+            <p>Ibiza Global Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="Capital Dance UK Кепітал Денс Клубна" onclick="playRadio('https://media-the.musicradio.com/CapitalDanceMP3', 'Capital Dance UK', 'logos/placeholders/music-1.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-1.svg" alt="Capital Dance UK" onerror="handleImgError(this)"></div>
+            <p>Capital Dance UK</p>
+        </div>
+
+        <div class="radio-item" data-name="Heart Dance UK Клубна Танцювальна Музика" onclick="playRadio('https://media-the.musicradio.com/HeartDanceMP3', 'Heart Dance UK', 'logos/placeholders/music-3.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-3.svg" alt="Heart Dance UK" onerror="handleImgError(this)"></div>
+            <p>Heart Dance UK</p>
+        </div>
+
+        <div class="radio-item" data-name="EuroDance 90s Radio Євроденс 90-ті Ретро Клуб" onclick="playRadio('https://stream-eurodance90.fr/radio/8000/128.mp3', 'EuroDance 90s Radio', 'logos/placeholders/music-17.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-17.svg" alt="EuroDance 90s Radio" onerror="handleImgError(this)"></div>
+            <p>EuroDance 90s Radio</p>
+        </div>
+
+        <div class="radio-item" data-name="105 Dance 90 Італійський Денс 90-ті" onclick="playRadio('https://icecast.unitedradio.it/105Dance90.mp3', '105 Dance 90 Italy', 'logos/placeholders/music-2.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-2.svg" alt="105 Dance 90 Italy" onerror="handleImgError(this)"></div>
+            <p>105 Dance 90 Italy</p>
+        </div>
+
+        <div class="radio-item" data-name="Megapolis FM Мегаполіс ФМ Електронна Клубна" onclick="playRadio('https://cast.megapolis.fm/listen/kryvyi_rih/radio.mp3', 'Megapolis FM', 'logos/megapolis-fm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/megapolis-fm.png" alt="Megapolis FM" onerror="handleImgError(this)"></div>
+            <p>Megapolis FM</p>
+        </div>
+
+        <div class="radio-item" data-name="SomaFM Beat Blender Діп Хаус Техно Бітс" onclick="playRadio('https://ice5.somafm.com/beatblender-128-mp3', 'SomaFM Beat Blender', 'logos/somafm.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM Beat Blender" onerror="handleImgError(this)"></div>
+            <p>SomaFM Beat Blender</p>
+        </div>
+
+        <div class="radio-item" data-name="Hit FM Top Hits Топ Хіти Хіт ФМ" onclick="playRadio('https://online.hitfm.ua/HitFM_Top', 'Hit FM Top Hits', 'logos/hit-fm-top-hits.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-top-hits.png" alt="Hit FM Top Hits" onerror="handleImgError(this)"></div>
+            <p>Hit FM Top Hits</p>
+        </div>
+
+        <div class="radio-item" data-name="Hit FM Найбільші Хіти Хіт ФМ Бест" onclick="playRadio('https://online.hitfm.ua/HitFM_Best', 'Hit FM Найбільші Хіти', 'logos/hit-fm-best-hits.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-best-hits.png" alt="Hit FM Найбільші Хіти" onerror="handleImgError(this)"></div>
+            <p>Hit FM Найбільші Хіти</p>
+        </div>
+
+        <div class="radio-item" data-name="Hit FM Українські Хіти Хіт ФМ ЮА" onclick="playRadio('https://online.hitfm.ua/HitFM_Ukr', 'Hit FM Українські Хіти', 'logos/hit-fm-ua-hits.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-ua-hits.png" alt="Hit FM Українські Хіти" onerror="handleImgError(this)"></div>
+            <p>Hit FM Українські Хіти</p>
+        </div>
+
+        <div class="radio-item" data-name="NRJ France Hits Енерджі Франція Топ Хіти" onclick="playRadio('https://scdn.nrjaudio.fm/audio1/fr/30001/mp3_128.mp3', 'NRJ France Hits', 'logos/nrj-ukraine.png', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/nrj-ukraine.png" alt="NRJ France Hits" onerror="handleImgError(this)"></div>
+            <p>NRJ France Hits</p>
+        </div>
+
+        <div class="radio-item" data-name="Radio Swiss Pop Швейцарський Поп Релакс" onclick="playRadio('https://stream.srg-ssr.ch/m/rsp/mp3_128', 'Swiss Pop', 'logos/placeholders/music-4.svg', this)">
+            <div class="playing-indicator"><span></span><span></span><span></span></div>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-4.svg" alt="Swiss Pop" onerror="handleImgError(this)"></div>
+            <p>Swiss Pop</p>
         </div>
 
         <div class="radio-item" data-name="Melodia FM Disco Мелодія Диско Ретро" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM_Disco', 'Melodia FM Disco', 'logos/melodia-fm.png', this)">
@@ -581,730 +713,196 @@
             <p>Melodia FM Disco</p>
         </div>
 
-        <div class="radio-item" data-name="Radio ROCKS Kyiv FM classic rock, heavy metal, rock" onclick="playRadio('https://online.radioroks.ua/RadioROKS_HD', 'Radio ROCKS Kyiv FM', 'logos/ua/fix-radio-rocks-kyiv-fm.jpg', this)">
+        <div class="radio-item" data-name="Capital FM UK Кепітал ФМ Топ 40 Хіти" onclick="playRadio('https://media-the.musicradio.com/CapitalMP3', 'Capital FM UK', 'logos/placeholders/music-5.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/fix-radio-rocks-kyiv-fm.jpg" alt="Radio ROCKS Kyiv FM" onerror="handleImgError(this)"></div>
-            <p>Radio ROCKS Kyiv FM</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-5.svg" alt="Capital FM UK" onerror="handleImgError(this)"></div>
+            <p>Capital FM UK</p>
         </div>
 
-        <div class="radio-item" data-name="ProgressiveUA deep house, progressive, progressive house, progressive trance, tech house, techno" onclick="playRadio('http://92.5.38.24:8000/radio.mp3', 'ProgressiveUA', 'logos/placeholders/music-16.svg', this)">
+        <div class="radio-item" data-name="Heart UK Харт Лондон Поп Хіти" onclick="playRadio('https://media-the.musicradio.com/HeartUKMP3', 'Heart UK', 'logos/placeholders/music-6.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-16.svg" alt="ProgressiveUA" onerror="handleImgError(this)"></div>
-            <p>ProgressiveUA</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-6.svg" alt="Heart UK" onerror="handleImgError(this)"></div>
+            <p>Heart UK</p>
         </div>
 
-        <div class="radio-item" data-name="Одесса радио Українське радіо, музика" onclick="playRadio('https://listen6.myradio24.com/odesradio', 'Одесса радио', 'logos/placeholders/music-20.svg', this)">
+        <div class="radio-item" data-name="Heart 80s UK Hits Харт 80-ті Ретро" onclick="playRadio('https://media-the.musicradio.com/Heart80sMP3', 'Heart 80s UK', 'logos/heart-90s.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-20.svg" alt="Одесса радио" onerror="handleImgError(this)"></div>
-            <p>Одесса радио</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/heart-90s.png" alt="Heart 80s UK" onerror="handleImgError(this)"></div>
+            <p>Heart 80s UK</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо П&#x27;ятниця information, music, news, other, pop" onclick="playRadio('https://cast.mediaonline.net.ua/radiopyatnica320', 'Радіо П\&#x27;ятниця', 'logos/ua/site-radiopyatnica-com-ua.jpg', this)">
+        <div class="radio-item" data-name="Heart 90s UK Hits Харт 90-ті Ретро" onclick="playRadio('https://media-the.musicradio.com/Heart90sMP3', 'Heart 90s UK', 'logos/heart-90s.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiopyatnica-com-ua.jpg" alt="Радіо П&#x27;ятниця" onerror="handleImgError(this)"></div>
-            <p>Радіо П&#x27;ятниця</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/heart-90s.png" alt="Heart 90s UK" onerror="handleImgError(this)"></div>
+            <p>Heart 90s UK</p>
         </div>
 
-        <div class="radio-item" data-name="Radio ROKS Hard&#x27;n&#x27;Heavy hard rock, heavy rock, rock" onclick="playRadio('http://online.radioroks.ua/RadioROKS_HardnHeavy_HD', 'Radio ROKS Hard\&#x27;n\&#x27;Heavy', 'logos/radio-roks.png', this)">
+        <div class="radio-item" data-name="Heart 00s UK Hits Харт 2000-ні" onclick="playRadio('https://media-the.musicradio.com/Heart00sMP3', 'Heart 00s UK', 'logos/heart-90s.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks.png" alt="Radio ROKS Hard&#x27;n&#x27;Heavy" onerror="handleImgError(this)"></div>
-            <p>Radio ROKS Hard&#x27;n&#x27;Heavy</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/heart-90s.png" alt="Heart 00s UK" onerror="handleImgError(this)"></div>
+            <p>Heart 00s UK</p>
         </div>
 
-        <div class="radio-item" data-name="Громадське радіо Українське радіо, музика" onclick="playRadio('http://5.9.8.20:8000/stream', 'Громадське радіо', 'logos/hromadske-radio.png', this)">
+        <div class="radio-item" data-name="1LIVE WDR Німеччина Топ Поп Хіти" onclick="playRadio('https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3', '1LIVE WDR Germany', 'logos/1live.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hromadske-radio.png" alt="Громадське радіо" onerror="handleImgError(this)"></div>
-            <p>Громадське радіо</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/1live.png" alt="1LIVE WDR Germany" onerror="handleImgError(this)"></div>
+            <p>1LIVE WDR Germany</p>
         </div>
 
-        <div class="radio-item" data-name="Radio Jazz Cover Українське радіо, музика" onclick="playRadio('https://online.radiojazz.ua/RadioJazz_Cover_HD', 'Radio Jazz Cover', 'logos/radio-jazz.png', this)">
+        <div class="radio-item" data-name="KIIS FM Los Angeles Лос Анджелес Топ 40" onclick="playRadio('https://stream.revma.ihrhls.com/zc185', 'KIIS FM Los Angeles', 'logos/kiis-fm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz.png" alt="Radio Jazz Cover" onerror="handleImgError(this)"></div>
-            <p>Radio Jazz Cover</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiis-fm.png" alt="KIIS FM Los Angeles" onerror="handleImgError(this)"></div>
+            <p>KIIS FM Los Angeles</p>
         </div>
 
-        <div class="radio-item" data-name="Radio Bayraktar Українське радіо, музика" onclick="playRadio('https://online.radiobayraktar.ua/RadioBayraktar', 'Radio Bayraktar', 'logos/ua/radio-bayraktar.jpg', this)">
+        <div class="radio-item" data-name="Z100 New York Нью Йорк Топ Хіти Хіт Музика" onclick="playRadio('https://stream.revma.ihrhls.com/zc1469', 'Z100 New York', 'logos/z100.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-bayraktar.jpg" alt="Radio Bayraktar" onerror="handleImgError(this)"></div>
-            <p>Radio Bayraktar</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/z100.png" alt="Z100 New York" onerror="handleImgError(this)"></div>
+            <p>Z100 New York</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо С4 320 kbit/s, https, mp3, music, regional radio" onclick="playRadio('https://radio.c4.com.ua:8443/320', 'Радіо С4', 'logos/ua/radio-s4.png', this)">
+        <div class="radio-item" data-name="SomaFM Indie Pop Rocks Інді Поп Рок Хіти" onclick="playRadio('https://ice5.somafm.com/indiepop-128-mp3', 'Indie Pop Rocks', 'logos/somafm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-s4.png" alt="Радіо С4" onerror="handleImgError(this)"></div>
-            <p>Радіо С4</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="Indie Pop Rocks" onerror="handleImgError(this)"></div>
+            <p>Indie Pop Rocks</p>
         </div>
 
-        <div class="radio-item" data-name="REPLAY NEWS - Українська Новинне радіо кожні 5 хвилин news" onclick="playRadio('https://replaynewsuk.ice.infomaniak.ch/replaynewsuk-128.mp3', 'REPLAY NEWS - Українська Новинне радіо кожні 5 хвилин', 'logos/ua/replay-news-ukrainska-novynne-radio-kozhni-5-khvylyn.png', this)">
+        <div class="radio-item" data-name="Radio ROKS Ballads Рок Балади Рокс" onclick="playRadio('https://online.radioroks.ua/RadioROKS_Ballads', 'ROKS Ballads', 'logos/radio-roks-ballads.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/replay-news-ukrainska-novynne-radio-kozhni-5-khvylyn.png" alt="REPLAY NEWS - Українська Новинне радіо кожні 5 хвилин" onerror="handleImgError(this)"></div>
-            <p>REPLAY NEWS - Українська Новинне радіо кожні 5 хвилин</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-ballads.png" alt="ROKS Ballads" onerror="handleImgError(this)"></div>
+            <p>ROKS Ballads</p>
         </div>
 
-        <div class="radio-item" data-name="RadiVo mix, pop, rock" onclick="playRadio('https://radivo.thx8te.kh.ua/listen/radivo/radio.mp3', 'RadiVo', 'logos/ua/radivo.png', this)">
+        <div class="radio-item" data-name="Melodia FM Romantic Мелодія Романтика Балади Спокійна" onclick="playRadio('https://online.melodiafm.ua/MelodiaFM_Romantic', 'Melodia Романтика', 'logos/melodia-fm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radivo.png" alt="RadiVo" onerror="handleImgError(this)"></div>
-            <p>RadiVo</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/melodia-fm.png" alt="Melodia Романтика" onerror="handleImgError(this)"></div>
+            <p>Melodia Романтика</p>
         </div>
 
-        <div class="radio-item" data-name="Люкс ФМ – Сучасні хіти Українське радіо, музика" onclick="playRadio('https://lux.radio.tvstitch.com/suchasni-hiti-sd', 'Люкс ФМ – Сучасні хіти', 'logos/ua/liuks-fm-suchasni-khity.jpg', this)">
+        <div class="radio-item" data-name="SomaFM Vaporwaves Вейпорвейв Чіллвейв Балади Nostalgia" onclick="playRadio('https://ice5.somafm.com/vaporwaves-128-mp3', 'SomaFM Vaporwaves', 'logos/somafm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/liuks-fm-suchasni-khity.jpg" alt="Люкс ФМ – Сучасні хіти" onerror="handleImgError(this)"></div>
-            <p>Люкс ФМ – Сучасні хіти</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM Vaporwaves" onerror="handleImgError(this)"></div>
+            <p>SomaFM Vaporwaves</p>
         </div>
 
-        <div class="radio-item" data-name="Radio Social.net.ua mixed" onclick="playRadio('http://radio.social.net.ua/live.mp3', 'Radio Social.net.ua', 'logos/ua/radio-social-net-ua.png', this)">
+        <div class="radio-item" data-name="SomaFM PopTron Електропоп Інді Денс Мелодії" onclick="playRadio('https://ice5.somafm.com/poptron-128-mp3', 'SomaFM PopTron', 'logos/somafm.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-social-net-ua.png" alt="Radio Social.net.ua" onerror="handleImgError(this)"></div>
-            <p>Radio Social.net.ua</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/somafm.png" alt="SomaFM PopTron" onerror="handleImgError(this)"></div>
+            <p>SomaFM PopTron</p>
         </div>
 
-        <div class="radio-item" data-name="Західний полюс West Pole 32k AAC Українське радіо, музика" onclick="playRadio('https://online.z-polus.info/mobile', 'Західний полюс West Pole 32k AAC', 'logos/ua/zakhidnyi-polius-west-pole-32k-aac.png', this)">
+        <div class="radio-item" data-name="Radio ROKS Київ Рок Рокс" onclick="playRadio('https://online.radioroks.ua/RadioROKS', 'Radio ROKS', 'logos/radio-roks.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/zakhidnyi-polius-west-pole-32k-aac.png" alt="Західний полюс West Pole 32k AAC" onerror="handleImgError(this)"></div>
-            <p>Західний полюс West Pole 32k AAC</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks.png" alt="Radio ROKS" onerror="handleImgError(this)"></div>
+            <p>Radio ROKS</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Байрактар propaganda, various" onclick="playRadio('https://online.radiobayraktar.ua/RadioBayraktar_HD', 'Радіо Байрактар', 'logos/ua/radio-bairaktar.ico', this)">
+        <div class="radio-item" data-name="Radio ROKS Hard and Heavy Хард енд Хеві Метал Рок" onclick="playRadio('https://online.radioroks.ua/RadioROKS_HardnHeavy', 'ROKS Hard & Heavy', 'logos/radio-roks-hard-heavy.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-bairaktar.ico" alt="Радіо Байрактар" onerror="handleImgError(this)"></div>
-            <p>Радіо Байрактар</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-hard-heavy.png" alt="ROKS Hard & Heavy" onerror="handleImgError(this)"></div>
+            <p>ROKS Hard & Heavy</p>
         </div>
 
-        <div class="radio-item" data-name="Люкс ФМ – Українські хіти ukraine" onclick="playRadio('https://lux.radio.tvstitch.com/ukrayinski-hiti-sd', 'Люкс ФМ – Українські хіти', 'logos/ua/liuks-fm-ukrainski-khity.jpg', this)">
+        <div class="radio-item" data-name="Radio ROKS Classic Rock Класичний Рок" onclick="playRadio('https://online.radioroks.ua/RadioROKS_ClassicRock', 'ROKS Classic Rock', 'logos/radio-roks.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/liuks-fm-ukrainski-khity.jpg" alt="Люкс ФМ – Українські хіти" onerror="handleImgError(this)"></div>
-            <p>Люкс ФМ – Українські хіти</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks.png" alt="ROKS Classic Rock" onerror="handleImgError(this)"></div>
+            <p>ROKS Classic Rock</p>
         </div>
 
-        <div class="radio-item" data-name="Мелодія Int pop" onclick="playRadio('http://online.melodiafm.ua/MelodiaFM_Int_Live', 'Мелодія Int', 'logos/melodia-fm.png', this)">
+        <div class="radio-item" data-name="Radio ROKS Український Рок Ukr Rock" onclick="playRadio('https://online.radioroks.ua/RadioROKS_Ukr_HD', 'ROKS Український Рок', 'logos/radio-roks-ukr-rock.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/melodia-fm.png" alt="Мелодія Int" onerror="handleImgError(this)"></div>
-            <p>Мелодія Int</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-ukr-rock.png" alt="ROKS Український Рок" onerror="handleImgError(this)"></div>
+            <p>ROKS Український Рок</p>
         </div>
 
-        <div class="radio-item" data-name="Tim FM Chernihiv Українське радіо, музика" onclick="playRadio('https://tim-fm.tim.ua/mp3', 'Tim FM Chernihiv', 'logos/ua/tim-fm-chernihiv.ico', this)">
+        <div class="radio-item" data-name="РокРадіо UA RockRadio Український Рок" onclick="playRadio('https://rockradioua.online:8433/rock_256', 'РокРадіо UA', 'logos/rockradio-ua.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/tim-fm-chernihiv.ico" alt="Tim FM Chernihiv" onerror="handleImgError(this)"></div>
-            <p>Tim FM Chernihiv</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/rockradio-ua.png" alt="РокРадіо UA" onerror="handleImgError(this)"></div>
+            <p>РокРадіо UA</p>
         </div>
 
-        <div class="radio-item" data-name="Сфера-ФМ (Рівне) information, music, news, pop, rock, varied" onclick="playRadio('https://cdn-br2.live-tv.cloud/sferarvFM/64k/icecast.audio', 'Сфера-ФМ (Рівне)', 'logos/sfera-fm.png', this)">
+        <div class="radio-item" data-name="Radio BOB Rock Metal БОБ Рок Метал" onclick="playRadio('https://streams.radiobob.de/bob-live/mp3-192/streams.radiobob.de/', 'Radio BOB! Rock', 'logos/placeholders/music-14.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/sfera-fm.png" alt="Сфера-ФМ (Рівне)" onerror="handleImgError(this)"></div>
-            <p>Сфера-ФМ (Рівне)</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-14.svg" alt="Radio BOB! Rock" onerror="handleImgError(this)"></div>
+            <p>Radio BOB! Rock</p>
         </div>
 
-        <div class="radio-item" data-name="Українське Радіо: Казки Українське радіо, музика" onclick="playRadio('http://radio.ukr.radio:8000/urkazka-mp3', 'Українське Радіо: Казки', 'logos/kazki.png', this)">
+        <div class="radio-item" data-name="Radio BOB Best of Rock Найкраще з Року" onclick="playRadio('https://streams.radiobob.de/bob-bestofrock/mp3-192/streams.radiobob.de/', 'Radio BOB! Best of Rock', 'logos/placeholders/music-13.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kazki.png" alt="Українське Радіо: Казки" onerror="handleImgError(this)"></div>
-            <p>Українське Радіо: Казки</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-13.svg" alt="Radio BOB! Best of Rock" onerror="handleImgError(this)"></div>
+            <p>Radio BOB! Best of Rock</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Хартія (Radio Khartia) Українське радіо, музика" onclick="playRadio('https://a9.asurahosting.com/listen/radio_khartia/radio.mp3', 'Радіо Хартія (Radio Khartia)', 'logos/ua/radio-khartiia-radio-khartia.jpg', this)">
+        <div class="radio-item" data-name="Radio BOB Classic Rock Класичний Рок БОБ" onclick="playRadio('https://streams.radiobob.de/bob-classicrock/mp3-192/streams.radiobob.de/', 'Radio BOB! Classic Rock', 'logos/placeholders/music-14.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-khartiia-radio-khartia.jpg" alt="Радіо Хартія (Radio Khartia)" onerror="handleImgError(this)"></div>
-            <p>Радіо Хартія (Radio Khartia)</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-14.svg" alt="Radio BOB! Classic Rock" onerror="handleImgError(this)"></div>
+            <p>Radio BOB! Classic Rock</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Сокаль aac, music, regional radio" onclick="playRadio('http://online.sokal.lviv.ua:8000/sokalfm96.mp3', 'Радіо Сокаль', 'logos/ua/radio-sokal.png', this)">
+        <div class="radio-item" data-name="Radio BOB Metal Важкий Метал Хеві" onclick="playRadio('https://streams.radiobob.de/bob-metal/mp3-192/streams.radiobob.de/', 'Radio BOB! Metal', 'logos/placeholders/music-20.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-sokal.png" alt="Радіо Сокаль" onerror="handleImgError(this)"></div>
-            <p>Радіо Сокаль</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-20.svg" alt="Radio BOB! Metal" onerror="handleImgError(this)"></div>
+            <p>Radio BOB! Metal</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Новий День 128 kbit/s, https, internet radio, mp3, music" onclick="playRadio('https://stream.zeno.fm/4rv8rzsdyjttv', 'Радіо Новий День', 'logos/ua/radio-novyi-den.png', this)">
+        <div class="radio-item" data-name="Radio BOB Alternative Альтернативний Рок Гранж" onclick="playRadio('https://streams.radiobob.de/bob-alternative/mp3-192/streams.radiobob.de/', 'Radio BOB! Alternative', 'logos/placeholders/music-14.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-novyi-den.png" alt="Радіо Новий День" onerror="handleImgError(this)"></div>
-            <p>Радіо Новий День</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-14.svg" alt="Radio BOB! Alternative" onerror="handleImgError(this)"></div>
+            <p>Radio BOB! Alternative</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Ми Україна hot ac" onclick="playRadio('https://cast.mediaonline.net.ua/wau320', 'Радіо Ми Україна', 'logos/ua/radio-my-ukraina.jpg', this)">
+        <div class="radio-item" data-name="Radio BOB 90s Rock Рок Дев’яностих" onclick="playRadio('https://streams.radiobob.de/bob-90errock/mp3-192/streams.radiobob.de/', 'Radio BOB! 90er Rock', 'logos/placeholders/music-13.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-my-ukraina.jpg" alt="Радіо Ми Україна" onerror="handleImgError(this)"></div>
-            <p>Радіо Ми Україна</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-13.svg" alt="Radio BOB! 90er Rock" onerror="handleImgError(this)"></div>
+            <p>Radio BOB! 90er Rock</p>
         </div>
 
-        <div class="radio-item" data-name="ZFM+ (Захид ФМ +) dance, edm, pop" onclick="playRadio('https://radio.zfm.com.ua:8443/zfm', 'ZFM+ (Захид ФМ +)', 'logos/zfm.jpg', this)">
+        <div class="radio-item" data-name="Gold Radio UK Золоті Хіти 60-70-ті Classic Hits" onclick="playRadio('https://media-the.musicradio.com/GoldMP3', 'Gold UK Hits', 'logos/placeholders/music-16.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/zfm.jpg" alt="ZFM+ (Захид ФМ +)" onerror="handleImgError(this)"></div>
-            <p>ZFM+ (Захид ФМ +)</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-16.svg" alt="Gold UK Hits" onerror="handleImgError(this)"></div>
+            <p>Gold UK Hits</p>
         </div>
 
-        <div class="radio-item" data-name="Наше Радіо 107,9 pop" onclick="playRadio('https://online.nasheradio.ua/NasheRadio_HD', 'Наше Радіо 107,9', 'logos/ua/fix-nashe-radio-107-9.png', this)">
+        <div class="radio-item" data-name="Virgin Rock Alternative Альтернативний Рок" onclick="playRadio('https://icecast.unitedradio.it/VirginRockAlternative.mp3', 'Virgin Rock Alternative', 'logos/virgin-rock.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/fix-nashe-radio-107-9.png" alt="Наше Радіо 107,9" onerror="handleImgError(this)"></div>
-            <p>Наше Радіо 107,9</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/virgin-rock.png" alt="Virgin Rock Alternative" onerror="handleImgError(this)"></div>
+            <p>Virgin Rock Alternative</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Інді.UA pop, rnb, rock" onclick="playRadio('https://online.radioplayer.ua/RadioIndieUA', 'Радіо Інді.UA', 'logos/ua/radio-indi-ua.png', this)">
+        <div class="radio-item" data-name="Virgin Hard Rock Хард Рок Важка Музика" onclick="playRadio('https://icecast.unitedradio.it/VirginHardRock.mp3', 'Virgin Hard Rock', 'logos/virgin-rock.png', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-indi-ua.png" alt="Радіо Інді.UA" onerror="handleImgError(this)"></div>
-            <p>Радіо Інді.UA</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/virgin-rock.png" alt="Virgin Hard Rock" onerror="handleImgError(this)"></div>
+            <p>Virgin Hard Rock</p>
         </div>
 
-        <div class="radio-item" data-name="Звичайне україномовне радіо 128 kbit/s, https, internet radio, mp3, music" onclick="playRadio('https://whsh4u-panel.com/proxy/yvlxzzdx?mp=/stream', 'Звичайне україномовне радіо', 'logos/ua/zvychaine-ukrainomovne-radio.jpg', this)">
+        <div class="radio-item" data-name="Radio X UK Британський Альтернативний Рок" onclick="playRadio('https://media-the.musicradio.com/RadioXLondonMP3', 'Radio X UK', 'logos/placeholders/music-14.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/zvychaine-ukrainomovne-radio.jpg" alt="Звичайне україномовне радіо" onerror="handleImgError(this)"></div>
-            <p>Звичайне україномовне радіо</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-14.svg" alt="Radio X UK" onerror="handleImgError(this)"></div>
+            <p>Radio X UK</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Перше 64 kbit/s, aac, https, lviv, music, news, podcasts, regional radio" onclick="playRadio('https://live.radio1.com.ua/liveradio64', 'Радіо Перше', 'logos/ua/radio-pershe.png', this)">
+        <div class="radio-item" data-name="Radio BOB Southern Rock Саузерн Рок" onclick="playRadio('https://streams.radiobob.de/bob-southernrock/mp3-192/streams.radiobob.de/', 'Radio BOB! Southern', 'logos/placeholders/music-20.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-pershe.png" alt="Радіо Перше" onerror="handleImgError(this)"></div>
-            <p>Радіо Перше</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-20.svg" alt="Radio BOB! Southern" onerror="handleImgError(this)"></div>
+            <p>BOB! Southern</p>
         </div>
 
-        <div class="radio-item" data-name="Радіо Нікополя Українське радіо, музика" onclick="playRadio('https://stream.nikopolnews.net/listen/radio_nikopol/high', 'Радіо Нікополя', 'logos/ua/radio-nikopolia.svg', this)">
+        <div class="radio-item" data-name="Radio X Classic Rock Класичний Британський Рок" onclick="playRadio('https://media-the.musicradio.com/RadioXClassicRockMP3', 'Radio X Classic', 'logos/placeholders/music-13.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-nikopolia.svg" alt="Радіо Нікополя" onerror="handleImgError(this)"></div>
-            <p>Радіо Нікополя</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-13.svg" alt="Radio X Classic" onerror="handleImgError(this)"></div>
+            <p>Radio X Classic</p>
         </div>
 
-        <div class="radio-item" data-name="П&#x27;ятниця Кременчук shanson" onclick="playRadio('http://radio.moa.org.ua/Friday', 'П\&#x27;ятниця Кременчук', 'logos/ua/site-radiopyatnica-com-ua.jpg', this)">
+        <div class="radio-item" data-name="Radio Paradise Rock Радіо Парадайз Еклектик Рок" onclick="playRadio('https://stream.radioparadise.com/rock-192', 'Radio Paradise Rock', 'logos/placeholders/music-14.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiopyatnica-com-ua.jpg" alt="П&#x27;ятниця Кременчук" onerror="handleImgError(this)"></div>
-            <p>П&#x27;ятниця Кременчук</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-14.svg" alt="Radio Paradise Rock" onerror="handleImgError(this)"></div>
+            <p>Radio Paradise Rock</p>
         </div>
 
-        <div class="radio-item" data-name="Світ FM 128 kbit/s, mp3, music, regional radio" onclick="playRadio('http://195.234.148.52:8000/', 'Світ FM', 'logos/placeholders/music-11.svg', this)">
+        <div class="radio-item" data-name="Radio Paradise Main Радіо Парадайз Головний Мікс" onclick="playRadio('https://stream.radioparadise.com/mp3-192', 'Radio Paradise Main', 'logos/placeholders/music-16.svg', this)">
             <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-11.svg" alt="Світ FM" onerror="handleImgError(this)"></div>
-            <p>Світ FM</p>
-        </div>
-
-        <div class="radio-item" data-name="FreshRock Internet Radio Station Українське радіо, музика" onclick="playRadio('https://stream.freshrock.net/128.mp3', 'FreshRock Internet Radio Station', 'logos/ua/freshrock-internet-radio-station.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/freshrock-internet-radio-station.jpg" alt="FreshRock Internet Radio Station" onerror="handleImgError(this)"></div>
-            <p>FreshRock Internet Radio Station</p>
-        </div>
-
-        <div class="radio-item" data-name="RZK alternative, rock" onclick="playRadio('http://stream.mjoy.ua:8000/rzk-aac', 'RZK', 'logos/ua/rzk.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/rzk.png" alt="RZK" onerror="handleImgError(this)"></div>
-            <p>RZK</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіоточка kultur" onclick="playRadio('http://radio.ukr.radio:8000/ur5-mp3', 'Радіоточка', 'logos/ua/radiotochka.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radiotochka.jpg" alt="Радіоточка" onerror="handleImgError(this)"></div>
-            <p>Радіоточка</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо РАІ aac, https, music, regional news, regional radio" onclick="playRadio('https://radio.rai.ua:9000/rai', 'Радіо РАІ', 'logos/ua/radio-rai.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-rai.png" alt="Радіо РАІ" onerror="handleImgError(this)"></div>
-            <p>Радіо РАІ</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Місто над Бугом 320 kbit/s, https, mp3, music, regional radio" onclick="playRadio('https://stream.mistonadbugom.com.ua/radiomistonadbugom', 'Радіо Місто над Бугом', 'logos/ua/radio-misto-nad-buhom.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-misto-nad-buhom.png" alt="Радіо Місто над Бугом" onerror="handleImgError(this)"></div>
-            <p>Радіо Місто над Бугом</p>
-        </div>
-
-        <div class="radio-item" data-name="K-Pop Radio k-pop" onclick="playRadio('https://online.radioplayer.ua/KpopRadio', 'K-Pop Radio', 'logos/placeholders/music-19.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-19.svg" alt="K-Pop Radio" onerror="handleImgError(this)"></div>
-            <p>K-Pop Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="Lux FM Lviv Українська музика" onclick="playRadio('https://lux.radio.tvstitch.com/lux_lviv_adv_sd', 'Lux FM Lviv', 'logos/lux-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/lux-fm.png" alt="Lux FM Lviv" onerror="handleImgError(this)"></div>
-            <p>Lux FM Lviv</p>
-        </div>
-
-        <div class="radio-item" data-name="Minatrix.FM: Независимое онлайн-радио и сообщество артистов для публикации музыки. Українська музика" onclick="playRadio('https://minatrix.fm:8002/play', 'Minatrix.FM: Независимое онлайн-радио и сообщество артистов для публикации музыки.', 'logos/ua/minatrix-fm-nezavysymoe-onlain-radyo-y-soobshchestvo-artysto.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/minatrix-fm-nezavysymoe-onlain-radyo-y-soobshchestvo-artysto.png" alt="Minatrix.FM: Независимое онлайн-радио и сообщество артистов для публикации музыки." onerror="handleImgError(this)"></div>
-            <p>Minatrix.FM: Независимое онлайн-радио и сообщество артистов для публикации музыки.</p>
-        </div>
-
-        <div class="radio-item" data-name="Misto FM Juda Українська музика" onclick="playRadio('https://stream.mistofm.com/listen/misto_fm_juda/radio.mp3', 'Misto FM Juda', 'logos/ua/misto-fm-juda.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/misto-fm-juda.png" alt="Misto FM Juda" onerror="handleImgError(this)"></div>
-            <p>Misto FM Juda</p>
-        </div>
-
-        <div class="radio-item" data-name="Pihota.FM Українська музика" onclick="playRadio('https://online.pihota.fm/listen/radio/128', 'Pihota.FM', 'logos/ua/pihota-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/pihota-fm.png" alt="Pihota.FM" onerror="handleImgError(this)"></div>
-            <p>Pihota.FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Power Кременчуг pop music" onclick="playRadio('http://radio.moa.org.ua/power', 'Power Кременчуг', 'logos/power-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/power-fm.png" alt="Power Кременчуг" onerror="handleImgError(this)"></div>
-            <p>Power Кременчуг</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio «RAID» Українська музика" onclick="playRadio('https://a9.asurahosting.com/listen/radio_raid/radio.mp3', 'Radio «RAID»', 'logos/ua/radio-raid.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-raid.png" alt="Radio «RAID»" onerror="handleImgError(this)"></div>
-            <p>Radio «RAID»</p>
-        </div>
-
-        <div class="radio-item" data-name="radio Italiana(UA) music" onclick="playRadio('https://online.radioplayer.ua/RadioItaliana', 'radio Italiana(UA)', 'logos/ua/radio-italiana-ua.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-italiana-ua.png" alt="radio Italiana(UA)" onerror="handleImgError(this)"></div>
-            <p>radio Italiana(UA)</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio ROCKS Новий Рок FM alternative rock, modern rock, rock" onclick="playRadio('https://online.radioroks.ua/RadioROKS_NewRock_HD', 'Radio ROCKS Новий Рок FM', 'logos/ua/radio-rocks-novyi-rok-fm.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-rocks-novyi-rok-fm.jpg" alt="Radio ROCKS Новий Рок FM" onerror="handleImgError(this)"></div>
-            <p>Radio ROCKS Новий Рок FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Skovoroda skovoroda, мандрівне, онлайн-радіо, сковорода, україномовне" onclick="playRadio('http://stream.radioskovoroda.com:8000/radioskovoroda', 'Radio Skovoroda', 'logos/ua/radio-skovoroda.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-skovoroda.png" alt="Radio Skovoroda" onerror="handleImgError(this)"></div>
-            <p>Radio Skovoroda</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio VTSU Українська музика" onclick="playRadio('http://vtsu.org.ua:8000/vtsu-pop', 'Radio VTSU', 'logos/ua/radio-vtsu.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-vtsu.png" alt="Radio VTSU" onerror="handleImgError(this)"></div>
-            <p>Radio VTSU</p>
-        </div>
-
-        <div class="radio-item" data-name="RADIO-HOOLIGAN Українська музика" onclick="playRadio('https://radio-hooligan.com/stream', 'RADIO-HOOLIGAN', 'logos/ua/radio-hooligan.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-hooligan.jpg" alt="RADIO-HOOLIGAN" onerror="handleImgError(this)"></div>
-            <p>RADIO-HOOLIGAN</p>
-        </div>
-
-        <div class="radio-item" data-name="Wolf Music Radio Українська музика" onclick="playRadio('https://a3.asurahosting.com/listen/wolf_music_radio/radio.mp3', 'Wolf Music Radio', 'logos/ua/wolf-music-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/wolf-music-radio.png" alt="Wolf Music Radio" onerror="handleImgError(this)"></div>
-            <p>Wolf Music Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="Yantarne FM 64 kbit/s, aac, https, music, regional radio" onclick="playRadio('https://complex.in.ua/yantarne', 'Yantarne FM', 'logos/ua/yantarne-fm.ico', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/yantarne-fm.ico" alt="Yantarne FM" onerror="handleImgError(this)"></div>
-            <p>Yantarne FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Вільне РАДІО Жовква ФМ Українська музика" onclick="playRadio('https://cast108372.customer.uar.net/live320', 'Вільне РАДІО Жовква ФМ', 'logos/ua/vilne-radio-zhovkva-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/vilne-radio-zhovkva-fm.png" alt="Вільне РАДІО Жовква ФМ" onerror="handleImgError(this)"></div>
-            <p>Вільне РАДІО Жовква ФМ</p>
-        </div>
-
-        <div class="radio-item" data-name="Єден радіо Українська музика" onclick="playRadio('http://31.128.79.192:8000/live', 'Єден радіо', 'logos/ua/ieden-radio.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/ieden-radio.svg" alt="Єден радіо" onerror="handleImgError(this)"></div>
-            <p>Єден радіо</p>
-        </div>
-
-        <div class="radio-item" data-name="Жидачів FM local radio, music, news" onclick="playRadio('https://complex.in.ua/zhudachiv', 'Жидачів FM', 'logos/placeholders/music-3.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-3.svg" alt="Жидачів FM" onerror="handleImgError(this)"></div>
-            <p>Жидачів FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Західний полюс West Pole 64k AAC+ Українська музика" onclick="playRadio('https://online.z-polus.info/mobilehq', 'Західний полюс West Pole 64k AAC+', 'logos/ua/zakhidnyi-polius-west-pole-64k-aac.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/zakhidnyi-polius-west-pole-64k-aac.png" alt="Західний полюс West Pole 64k AAC+" onerror="handleImgError(this)"></div>
-            <p>Західний полюс West Pole 64k AAC+</p>
-        </div>
-
-        <div class="radio-item" data-name="Коростень фм Українська музика" onclick="playRadio('https://radio.korostenmedia.news/stream', 'Коростень фм', 'logos/ua/korosten-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/korosten-fm.png" alt="Коростень фм" onerror="handleImgError(this)"></div>
-            <p>Коростень фм</p>
-        </div>
-
-        <div class="radio-item" data-name="Люкс ФМ – Золоті хіти retro" onclick="playRadio('https://lux.radio.tvstitch.com/zoloti-hiti-sd', 'Люкс ФМ – Золоті хіти', 'logos/ua/liuks-fm-zoloti-khity.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/liuks-fm-zoloti-khity.jpg" alt="Люкс ФМ – Золоті хіти" onerror="handleImgError(this)"></div>
-            <p>Люкс ФМ – Золоті хіти</p>
-        </div>
-
-        <div class="radio-item" data-name="Надвірна FM information, local news, music" onclick="playRadio('http://195.114.96.114:7878/', 'Надвірна FM', 'logos/ua/nadvirna-fm.ico', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/nadvirna-fm.ico" alt="Надвірна FM" onerror="handleImgError(this)"></div>
-            <p>Надвірна FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Радио НВ news, politics" onclick="playRadio('http://91.218.212.84:8000/radionv.mp3', 'Радио НВ', 'logos/ua/radio-nv.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-nv.png" alt="Радио НВ" onerror="handleImgError(this)"></div>
-            <p>Радио НВ</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо RESPECT entertainment, information, music, news, other" onclick="playRadio('http://195.66.79.35:8000/live', 'Радіо RESPECT', 'logos/ua/radio-respect.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-respect.jpg" alt="Радіо RESPECT" onerror="handleImgError(this)"></div>
-            <p>Радіо RESPECT</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо X.ON 64 kbit/s, aac, https, music, regional radio" onclick="playRadio('https://audio.x-on.com.ua:8443/x-on-aacp-64.aac', 'Радіо X.ON', 'logos/ua/radio-x-on.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-x-on.png" alt="Радіо X.ON" onerror="handleImgError(this)"></div>
-            <p>Радіо X.ON</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо КРИВБАС information, local news, music, news, other, pop" onclick="playRadio('https://onair.kryvbas.fm/RadioKryvbas', 'Радіо КРИВБАС', 'logos/ua/radio-kryvbas.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-kryvbas.png" alt="Радіо КРИВБАС" onerror="handleImgError(this)"></div>
-            <p>Радіо КРИВБАС</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Магніт information, local news, music, news, other, pop" onclick="playRadio('http://176.67.8.31:8000/stream', 'Радіо Магніт', 'logos/placeholders/music-7.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-7.svg" alt="Радіо Магніт" onerror="handleImgError(this)"></div>
-            <p>Радіо Магніт</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Мегаполіс (Кам&#x27;янське) information, local news, music, news, other, pop" onclick="playRadio('https://cast.megapolis.fm/listen/kamyanske/radio.mp3', 'Радіо Мегаполіс (Кам\&#x27;янське)', 'logos/megapolis-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/megapolis-fm.png" alt="Радіо Мегаполіс (Кам&#x27;янське)" onerror="handleImgError(this)"></div>
-            <p>Радіо Мегаполіс (Кам&#x27;янське)</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Накипіло / Radio Nakypilo electronic, jazz, pop, ukraine, ukrainian, ukrainian rock" onclick="playRadio('https://radiostream.nakypilo.ua/full', 'Радіо Накипіло / Radio Nakypilo', 'logos/ua/radio-nakypilo-radio-nakypilo.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-nakypilo-radio-nakypilo.png" alt="Радіо Накипіло / Radio Nakypilo" onerror="handleImgError(this)"></div>
-            <p>Радіо Накипіло / Radio Nakypilo</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Сяйво 320 kbit/s, https, mp3, music, regional radio" onclick="playRadio('https://stream.ntktv.ua/syaivo.mp3', 'Радіо Сяйво', 'logos/ua/radio-siaivo.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-siaivo.png" alt="Радіо Сяйво" onerror="handleImgError(this)"></div>
-            <p>Радіо Сяйво</p>
-        </div>
-
-        <div class="radio-item" data-name="Слобожанське ФМ information, music, national, news, pop" onclick="playRadio('https://globalic.stream:1810/stream', 'Слобожанське ФМ', 'logos/ua/slobozhanske-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/slobozhanske-fm.png" alt="Слобожанське ФМ" onerror="handleImgError(this)"></div>
-            <p>Слобожанське ФМ</p>
-        </div>
-
-        <div class="radio-item" data-name="Стрий FM information, local news, music, news, other, pop" onclick="playRadio('http://online.fm.stryi.com:8000/stryi-fm_mp3', 'Стрий FM', 'logos/ua/stryi-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/stryi-fm.png" alt="Стрий FM" onerror="handleImgError(this)"></div>
-            <p>Стрий FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Українські хіти ukrainian" onclick="playRadio('https://radio.dobreff.com/ukraine.mp3', 'Українські хіти', 'logos/ua/ukrainski-khity.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/ukrainski-khity.svg" alt="Українські хіти" onerror="handleImgError(this)"></div>
-            <p>Українські хіти</p>
-        </div>
-
-        <div class="radio-item" data-name="ЕКО Radio Українське радіо (Variety)" onclick="playRadio('http://134.249.140.134:8000/;stream.nsv', 'ЕКО Radio', 'logos/classic-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/classic-radio.png" alt="ЕКО Radio" onerror="handleImgError(this)"></div>
-            <p>ЕКО Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="Трансляція РКБ Українське радіо (Christian)" onclick="playRadio('http://noasrv.caster.fm:10001/autodj', 'Трансляція РКБ', 'logos/placeholders/music-5.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-5.svg" alt="Трансляція РКБ" onerror="handleImgError(this)"></div>
-            <p>Трансляція РКБ</p>
-        </div>
-
-        <div class="radio-item" data-name="HBR1 -  Dream Factory [Ogg Vorbis] M3U імпорт" onclick="playRadio('http://radio.hbr1.com:19800/ambient.ogg?n=974d0aa28ca200c4339b', 'HBR1 -  Dream Factory [Ogg Vorbis]', 'logos/ua/hbr1-dream-factory-ogg-vorbis.ico', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/hbr1-dream-factory-ogg-vorbis.ico" alt="HBR1 -  Dream Factory [Ogg Vorbis]" onerror="handleImgError(this)"></div>
-            <p>HBR1 -  Dream Factory [Ogg Vorbis]</p>
-        </div>
-
-        <div class="radio-item" data-name="Kiss FM Ukraine HD M3U імпорт" onclick="playRadio('https://online.kissfm.ua/KissFM_Ukr_HD?n=964ccd571fe2e9f78518', 'Kiss FM Ukraine HD', 'logos/kiss-fm-ukrainian.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm-ukrainian.png" alt="Kiss FM Ukraine HD" onerror="handleImgError(this)"></div>
-            <p>Kiss FM Ukraine HD</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio 24 M3U імпорт" onclick="playRadio('http://icecast.luxnet.ua/radio24?n=689336ecfc37bfe2c12f', 'Radio 24', 'logos/ua/radio-24.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-24.png" alt="Radio 24" onerror="handleImgError(this)"></div>
-            <p>Radio 24</p>
-        </div>
-
-        <div class="radio-item" data-name="The West Pole Radio M3U імпорт" onclick="playRadio('https://online.z-polus.info/hq?n=fa19a641b102cca94e89', 'The West Pole Radio', 'logos/ua/the-west-pole-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/the-west-pole-radio.png" alt="The West Pole Radio" onerror="handleImgError(this)"></div>
-            <p>The West Pole Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="TopRadio M3U імпорт" onclick="playRadio('https://stream.topradio.in.ua/topradio.mp3?n=a3ea1ee078dcd16e053c', 'TopRadio', 'logos/ua/topradio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/topradio.png" alt="TopRadio" onerror="handleImgError(this)"></div>
-            <p>TopRadio</p>
-        </div>
-
-        <div class="radio-item" data-name="Ukrainian Radio FM M3U імпорт" onclick="playRadio('http://radio.ukr.radio:8000/ur1-aacplus-l?n=80a8582e0a86b31b30d8', 'Ukrainian Radio FM', 'logos/ukrainske-radio-ur1.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ukrainske-radio-ur1.png" alt="Ukrainian Radio FM" onerror="handleImgError(this)"></div>
-            <p>Ukrainian Radio FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Броди ФМ M3U імпорт" onclick="playRadio('https://complex.in.ua/brodyHD?n=df8d116e41218a9c9f7d', 'Броди ФМ', 'logos/brody-fm.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/brody-fm.jpg" alt="Броди ФМ" onerror="handleImgError(this)"></div>
-            <p>Броди ФМ</p>
-        </div>
-
-        <div class="radio-item" data-name="Єдині новини M3U імпорт" onclick="playRadio('https://online-news.radioplayer.ua/RadioNews?n=5b6b6b2156867878ab86', 'Єдині новини', 'logos/radio-yedyni-novyny.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-yedyni-novyny.png" alt="Єдині новини" onerror="handleImgError(this)"></div>
-            <p>Єдині новини</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Ми з України M3U імпорт" onclick="playRadio('https://stream4.nadaje.com:9889/lux?nocache=3870?n=4c6ce9f3a1c53b8e3c11', 'Радіо Ми з України', 'logos/ua/radio-my-z-ukrainy.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-my-z-ukrainy.jpg" alt="Радіо Ми з України" onerror="handleImgError(this)"></div>
-            <p>Радіо Ми з України</p>
-        </div>
-
-        <div class="radio-item" data-name="Фреш FM Стрий, 104.8 FM M3U імпорт" onclick="playRadio('http://radio.telelan.com.ua:8000/fresh-fm_mp3?n=5aa8bcfab6b1a8506ea7', 'Фреш FM Стрий, 104.8 FM', 'logos/fresh-fm.gif', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/fresh-fm.gif" alt="Фреш FM Стрий, 104.8 FM" onerror="handleImgError(this)"></div>
-            <p>Фреш FM Стрий, 104.8 FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Явір FM M3U імпорт" onclick="playRadio('https://complex.in.ua/Yavir320?n=2bdf39386cdd88b5a346', 'Явір FM', 'logos/ua/iavir-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/iavir-fm.png" alt="Явір FM" onerror="handleImgError(this)"></div>
-            <p>Явір FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Українське Радіо. Одеса M3U імпорт" onclick="playRadio('http://radio.ukr.radio:8000/ur1-od-mp3?n=c0aa6c60e4bf6da2c2cd', 'Українське Радіо. Одеса', 'logos/ukrainske-radio-ur1.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ukrainske-radio-ur1.png" alt="Українське Радіо. Одеса" onerror="handleImgError(this)"></div>
-            <p>Українське Радіо. Одеса</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Ритм M3U імпорт" onclick="playRadio('http://31.131.18.66:8000/ritm-mp3-320?n=c4517769ec8b8a416953', 'Радіо Ритм', 'logos/placeholders/music-15.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-15.svg" alt="Радіо Ритм" onerror="handleImgError(this)"></div>
-            <p>Радіо Ритм</p>
-        </div>
-
-        <div class="radio-item" data-name="Тиса-FM M3U імпорт" onclick="playRadio('http://91.218.213.49:8000/tysafm-mp3?n=0b7ee5af385f3ef2e43e', 'Тиса-FM', 'logos/placeholders/music-16.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-16.svg" alt="Тиса-FM" onerror="handleImgError(this)"></div>
-            <p>Тиса-FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Lux FM M3U імпорт" onclick="playRadio('https://streamvideo.luxnet.ua/lux/smil:lux.stream.smil/playlist.m3u8', 'Lux FM', 'logos/lux-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/lux-fm.png" alt="Lux FM" onerror="handleImgError(this)"></div>
-            <p>Lux FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Аверс M3U імпорт" onclick="playRadio('https://radio.avers.pp.ua/hls_radio/efir.m3u8', 'Радіо Аверс', 'logos/avers-fm.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/avers-fm.jpg" alt="Радіо Аверс" onerror="handleImgError(this)"></div>
-            <p>Радіо Аверс</p>
-        </div>
-
-        <div class="radio-item" data-name="Перше міське радіо (Одеса) M3U імпорт" onclick="playRadio('https://live.1tv.od.ua/radio/stream/icecast.audio', 'Перше міське радіо (Одеса)', 'logos/ua/pershe-miske-radio-odesa.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/pershe-miske-radio-odesa.png" alt="Перше міське радіо (Одеса)" onerror="handleImgError(this)"></div>
-            <p>Перше міське радіо (Одеса)</p>
-        </div>
-
-        <div class="radio-item" data-name="106.5 Kiss FM M3U імпорт" onclick="playRadio('https://online.kissfm.ua/KissFM_HD', '106.5 Kiss FM', 'logos/kiss-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm.png" alt="106.5 Kiss FM" onerror="handleImgError(this)"></div>
-            <p>106.5 Kiss FM</p>
-        </div>
-
-        <div class="radio-item" data-name="AI-MUSIC M3U імпорт" onclick="playRadio('https://ai-music.com.ua/stream', 'AI-MUSIC', 'logos/ua/ai-music.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/ai-music.jpg" alt="AI-MUSIC" onerror="handleImgError(this)"></div>
-            <p>AI-MUSIC</p>
-        </div>
-
-        <div class="radio-item" data-name="Flash Radio M3U імпорт" onclick="playRadio('https://online.radioplayer.ua/FlashRadio_HD', 'Flash Radio', 'logos/ua/flash-radio.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/flash-radio.jpg" alt="Flash Radio" onerror="handleImgError(this)"></div>
-            <p>Flash Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="Gachi Station (Ukrainian playlist) #1 M3U імпорт" onclick="playRadio('https://stream.zeno.fm/bmb6ihzfbpdtv', 'Gachi Station (Ukrainian playlist) #1', 'logos/ua/gachi-station-ukrainian-playlist-1.webp', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/gachi-station-ukrainian-playlist-1.webp" alt="Gachi Station (Ukrainian playlist) #1" onerror="handleImgError(this)"></div>
-            <p>Gachi Station (Ukrainian playlist) #1</p>
-        </div>
-
-        <div class="radio-item" data-name="Greatest Songs Radio M3U імпорт" onclick="playRadio('https://stream.mjoy.ua:8443/radio-great', 'Greatest Songs Radio', 'logos/placeholders/music-3.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-3.svg" alt="Greatest Songs Radio" onerror="handleImgError(this)"></div>
-            <p>Greatest Songs Radio</p>
-        </div>
-
-        <div class="radio-item" data-name="I Love Kebab M3U імпорт" onclick="playRadio('https://stream.mjoy.ua:8443/ilovekebab-aac', 'I Love Kebab', 'logos/placeholders/music-7.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-7.svg" alt="I Love Kebab" onerror="handleImgError(this)"></div>
-            <p>I Love Kebab</p>
-        </div>
-
-        <div class="radio-item" data-name="KEXXX FM Ukraine M3U імпорт" onclick="playRadio('http://listen6.myradio24.com:9000/4171', 'KEXXX FM Ukraine', 'logos/placeholders/music-5.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-5.svg" alt="KEXXX FM Ukraine" onerror="handleImgError(this)"></div>
-            <p>KEXXX FM Ukraine</p>
-        </div>
-
-        <div class="radio-item" data-name="KISS FM Digital M3U імпорт" onclick="playRadio('https://online.kissfm.ua/KissFM_Digital_HD', 'KISS FM Digital', 'logos/kiss-fm-digital.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kiss-fm-digital.png" alt="KISS FM Digital" onerror="handleImgError(this)"></div>
-            <p>KISS FM Digital</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Jazz FM M3U імпорт" onclick="playRadio('http://online.radiojazz.ua/RadioJazz_Christmas_Live', 'Radio Jazz FM', 'logos/radio-jazz.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz.png" alt="Radio Jazz FM" onerror="handleImgError(this)"></div>
-            <p>Radio Jazz FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Relax Інструментал 320 M3U імпорт" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Instrumental', 'Radio Relax Інструментал 320', 'logos/ua/site-radiorelax-ua.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiorelax-ua.png" alt="Radio Relax Інструментал 320" onerror="handleImgError(this)"></div>
-            <p>Radio Relax Інструментал 320</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio ROKS Hard and Heavy 320 M3U імпорт" onclick="playRadio('https://online.radioroks.ua/RadioROKS_HardnHeavy', 'Radio ROKS Hard and Heavy 320', 'logos/radio-roks-hard-heavy.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-hard-heavy.png" alt="Radio ROKS Hard and Heavy 320" onerror="handleImgError(this)"></div>
-            <p>Radio ROKS Hard and Heavy 320</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio ROKS Рок-Балади M3U імпорт" onclick="playRadio('https://online.radioroks.ua/RadioROKS_Ballads_HD', 'Radio ROKS Рок-Балади', 'logos/radio-roks-ballads.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-roks-ballads.png" alt="Radio ROKS Рок-Балади" onerror="handleImgError(this)"></div>
-            <p>Radio ROKS Рок-Балади</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Ukraine International FM M3U імпорт" onclick="playRadio('http://radio.ukr.radio:8000/rui-aacplus-l', 'Radio Ukraine International FM', 'logos/ua/vsesvitnia-sluzhba-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/vsesvitnia-sluzhba-radio.png" alt="Radio Ukraine International FM" onerror="handleImgError(this)"></div>
-            <p>Radio Ukraine International FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Relax Українською M3U імпорт" onclick="playRadio('https://online.radiorelax.ua/RadioRelax_Ukr_HD', 'Relax Українською', 'logos/ua/site-radiorelax-ua.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/site-radiorelax-ua.png" alt="Relax Українською" onerror="handleImgError(this)"></div>
-            <p>Relax Українською</p>
-        </div>
-
-        <div class="radio-item" data-name="Vinnytsia 88.6 FM M3U імпорт" onclick="playRadio('http://radio.ukr.radio:8000/ur1-vn-aacplus', 'Vinnytsia 88.6 FM', 'logos/ukrainske-radio-ur1.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ukrainske-radio-ur1.png" alt="Vinnytsia 88.6 FM" onerror="handleImgError(this)"></div>
-            <p>Vinnytsia 88.6 FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Ванда FM M3U імпорт" onclick="playRadio('https://icecast.xtvmedia.pp.ua/radiowandafm_hq.mp3', 'Ванда FM', 'logos/placeholders/music-9.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-9.svg" alt="Ванда FM" onerror="handleImgError(this)"></div>
-            <p>Ванда FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Всесвітня служба радіо M3U імпорт" onclick="playRadio('https://radio.ukr.radio/ur4-mp3', 'Всесвітня служба радіо', 'logos/ua/vsesvitnia-sluzhba-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/vsesvitnia-sluzhba-radio.png" alt="Всесвітня служба радіо" onerror="handleImgError(this)"></div>
-            <p>Всесвітня служба радіо</p>
-        </div>
-
-        <div class="radio-item" data-name="Голос Прикарпаття, Старий Самбір M3U імпорт" onclick="playRadio('https://complex.in.ua/stsambirr', 'Голос Прикарпаття, Старий Самбір', 'logos/golos-prykarpattya.jpg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/golos-prykarpattya.jpg" alt="Голос Прикарпаття, Старий Самбір" onerror="handleImgError(this)"></div>
-            <p>Голос Прикарпаття, Старий Самбір</p>
-        </div>
-
-        <div class="radio-item" data-name="Гуляй Радіо M3U імпорт" onclick="playRadio('https://online.radioplayer.ua/GuliayRadio', 'Гуляй Радіо', 'logos/ua/huliai-radio.ico', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/huliai-radio.ico" alt="Гуляй Радіо" onerror="handleImgError(this)"></div>
-            <p>Гуляй Радіо</p>
-        </div>
-
-        <div class="radio-item" data-name="Країна FM M3U імпорт" onclick="playRadio('https://live2.radioec.com.ua/kiev128s.mp3', 'Країна FM', 'logos/kraina-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/kraina-fm.png" alt="Країна FM" onerror="handleImgError(this)"></div>
-            <p>Країна FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Наше Радіо УкрТоп100 M3U імпорт" onclick="playRadio('https://online.nasheradio.ua/NasheRadio_Ukr_HD', 'Наше Радіо УкрТоп100', 'logos/nashe-radio.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/nashe-radio.png" alt="Наше Радіо УкрТоп100" onerror="handleImgError(this)"></div>
-            <p>Наше Радіо УкрТоп100</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо 10 M3U імпорт" onclick="playRadio('https://radio10.ua/RADIO10-VISLUHAYETE.mp3', 'Радіо 10', 'logos/radio-10.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-10.png" alt="Радіо 10" onerror="handleImgError(this)"></div>
-            <p>Радіо 10</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо BakerTilly M3U імпорт" onclick="playRadio('http://radio.bakertilly.ua:8000/stream', 'Радіо BakerTilly', 'logos/ua/radio-bakertilly.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/ua/radio-bakertilly.png" alt="Радіо BakerTilly" onerror="handleImgError(this)"></div>
-            <p>Радіо BakerTilly</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Medicover M3U імпорт" onclick="playRadio('http://stream.mjoy.ua:8000/radio-medicover', 'Радіо Medicover', 'logos/placeholders/music-3.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-3.svg" alt="Радіо Medicover" onerror="handleImgError(this)"></div>
-            <p>Радіо Medicover</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Егоїсти M3U імпорт" onclick="playRadio('https://stream.mjoy.ua:8443/radio-egoisty', 'Радіо Егоїсти', 'logos/placeholders/music-13.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-13.svg" alt="Радіо Егоїсти" onerror="handleImgError(this)"></div>
-            <p>Радіо Егоїсти</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо з Криївки M3U імпорт" onclick="playRadio('https://stream.mjoy.ua:8443/radio-z-kryjivky', 'Радіо з Криївки', 'logos/placeholders/music-11.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-11.svg" alt="Радіо з Криївки" onerror="handleImgError(this)"></div>
-            <p>Радіо з Криївки</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Трускавець FM Live M3U імпорт" onclick="playRadio('https://complex.in.ua/truskavets', 'Радіо Трускавець FM Live', 'logos/placeholders/music-9.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-9.svg" alt="Радіо Трускавець FM Live" onerror="handleImgError(this)"></div>
-            <p>Радіо Трускавець FM Live</p>
-        </div>
-
-        <div class="radio-item" data-name="Сок FM M3U імпорт" onclick="playRadio('https://online-sokfm.pp.ua:8443/SokFM', 'Сок FM', 'logos/placeholders/music-3.svg', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-3.svg" alt="Сок FM" onerror="handleImgError(this)"></div>
-            <p>Сок FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Хіт FM TAVR" onclick="playRadio('http://online.hitfm.ua/HitFM_HD', 'Хіт FM', 'logos/hit-fm.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm.png" alt="Хіт FM" onerror="handleImgError(this)"></div>
-            <p>Хіт FM</p>
-        </div>
-
-        <div class="radio-item" data-name="Hit FM Best TAVR Extra" onclick="playRadio('http://online.hitfm.ua/HitFM_Best_HD', 'Hit FM Best', 'logos/hit-fm-best-hits.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-best-hits.png" alt="Hit FM Best" onerror="handleImgError(this)"></div>
-            <p>Hit FM Best</p>
-        </div>
-
-        <div class="radio-item" data-name="Hit FM Ukrainian TAVR Extra" onclick="playRadio('http://online.hitfm.ua/HitFM_Ukr_HD', 'Hit FM Ukrainian', 'logos/hit-fm-ua-hits.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/hit-fm-ua-hits.png" alt="Hit FM Ukrainian" onerror="handleImgError(this)"></div>
-            <p>Hit FM Ukrainian</p>
-        </div>
-
-        <div class="radio-item" data-name="Radio Jazz Groove TAVR Extra" onclick="playRadio('http://online.radiojazz.ua/RadioJazz_Groove_HD', 'Radio Jazz Groove', 'logos/radio-jazz.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-jazz.png" alt="Radio Jazz Groove" onerror="handleImgError(this)"></div>
-            <p>Radio Jazz Groove</p>
-        </div>
-
-        <div class="radio-item" data-name="Радіо Такт (Вінниця) Local" onclick="playRadio('http://radiotakt.com.ua:8000/takt', 'Радіо Такт (Вінниця)', 'logos/radio-takt.png', this)">
-            <div class="playing-indicator"><span></span><span></span><span></span></div>
-            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/radio-takt.png" alt="Радіо Такт (Вінниця)" onerror="handleImgError(this)"></div>
-            <p>Радіо Такт (Вінниця)</p>
+            <div class="img-wrapper"><img loading="lazy" decoding="async" src="logos/placeholders/music-16.svg" alt="Radio Paradise Main" onerror="handleImgError(this)"></div>
+            <p>Radio Paradise Main</p>
         </div>
     </div>
 </div>
