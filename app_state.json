@@ -221,8 +221,9 @@
     "tv.cdn.xsg.ge/gpb-radio2/tracks-a1/index.m3u8"
   ],
   "selected_country_codes": [
+    "UA",
     "ES"
   ],
   "selected_genre_patterns": [],
-  "last_played_url": "http://198.162.21.84:8002/;?type=http&nocache=10%2Fstream.mp3&_=1"
+  "last_played_url": "https://flow.emisiononline.es/radio/8010/bside.aac?n=f62ad3c21528aecd2414"
 }
