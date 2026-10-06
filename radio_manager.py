@@ -3031,6 +3031,30 @@ class RadioManagerWindow(QMainWindow):
 
         bottom_layout.addStretch()
 
+        self.btn_export_m3u = QPushButton("💾 Зберегти M3U")
+        self.btn_export_m3u.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.btn_export_m3u.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.btn_export_m3u.setFixedHeight(56)
+        self.btn_export_m3u.setStyleSheet("""
+            QPushButton {
+                background-color: #238636;
+                color: #ffffff;
+                font-size: 26px;
+                font-weight: bold;
+                border-radius: 8px;
+                padding: 0 28px;
+                border: none;
+            }
+            QPushButton:hover {
+                background-color: #2ea043;
+            }
+            QPushButton:pressed {
+                background-color: #1a6327;
+            }
+        """)
+        self.btn_export_m3u.clicked.connect(self._export_filtered_stations_to_m3u)
+        bottom_layout.addWidget(self.btn_export_m3u)
+
         self.btn_ok = QPushButton("ОК — Видалити позначені з JSON")
         self.btn_ok.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.btn_ok.setCursor(Qt.CursorShape.PointingHandCursor)
@@ -4829,6 +4853,45 @@ class RadioManagerWindow(QMainWindow):
                 )
         finally:
             self._is_editing_station = False
+
+    def _export_filtered_stations_to_m3u(self):
+        """Експорт поточних відфільтрованих станцій у файл M3U."""
+        if not self.filtered_station_items:
+            QMessageBox.warning(self, "Експорт", "Немає станцій для експорту (список порожній).")
+            return
+
+        # Визначаємо ім'я файлу на основі поточного фільтра країни
+        country_name = "Filtered_Stations"
+        if hasattr(self, 'country_combo') and self.country_combo:
+            country_name = self.country_combo.currentText()
+
+        default_filename = f"{country_name}.m3u".replace(" ", "_")
+
+        file_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Зберегти плейлист M3U",
+            default_filename,
+            "M3U Playlist (*.m3u);;All Files (*)"
+        )
+
+        if not file_path:
+            return
+
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write("#EXTM3U\n")
+                for station in self.filtered_station_items:
+                    name = station.get('name') or station.get('title') or "Unknown Station"
+                    url = station.get('url')
+                    if url:
+                        f.write(f"#EXTINF:-1,{name}\n")
+                        f.write(f"{url}\n")
+
+            QMessageBox.information(self, "Успіх", f"Плейлист успішно збережено у:\n{file_path}")
+            logger.info(f"Експортовано {len(self.filtered_station_items)} станцій у {file_path}")
+        except Exception as e:
+            QMessageBox.critical(self, "Помилка", f"Не вдалося зберегти файл: {str(e)}")
+            logger.error(f"Помилка при експорті M3U: {e}")
 
     def _apply_deletions(self):
         to_delete = [s for s in self.stations if s.get("_marked_delete", False)]
