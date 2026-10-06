@@ -9,6 +9,15 @@ __pycache__/
 *.tmp
 *.temp
 
+# JSON and Python files
+*.json
+*.py
+
+# Documentation files (internal agent docs)
+AGENT.md
+PLAN.md
+urok_git.txt
+
 # Playlist dumps
 *.m3u
 *.m3u8
