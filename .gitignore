@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary and log files
+*.log
+*.bak
+*.tmp
+*.temp
+
+# Playlist dumps
+*.m3u
+*.m3u8
+*.pls
+*.xspf
+getstation/
+
+# OS generated files
+.DS_Store
+Thumbs.db
