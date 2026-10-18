@@ -433,10 +433,27 @@
         }
 
         @media (hover: none), (max-width: 1024px) {
+            video#bg-video {
+                display: none !important;
+            }
+            .page-overlay {
+                background: #0b0b0d !important;
+            }
             .radio-item {
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                background: rgba(18, 18, 24, 0.45);
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: #18191f !important;
+                border: 1px solid rgba(255, 255, 255, 0.12) !important;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35) !important;
+            }
+            .radio-item:hover, .radio-item:active {
+                transform: none !important;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35) !important;
+            }
+            .top-nav {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(11, 11, 13, 0.98) !important;
             }
         }
 
@@ -1158,12 +1175,20 @@
 <audio id="audioPlayer" preload="none"></audio>
 
 <script>
+    const isMobile = window.matchMedia('(max-width: 1024px), (hover: none)').matches;
     const bgVideo = document.getElementById('bg-video');
     if (bgVideo) {
-        bgVideo.playbackRate = 0.5;
-        bgVideo.addEventListener('play', () => {
+        if (isMobile) {
+            bgVideo.pause();
+            bgVideo.removeAttribute('autoplay');
+            bgVideo.src = '';
+            bgVideo.load();
+        } else {
             bgVideo.playbackRate = 0.5;
-        });
+            bgVideo.addEventListener('play', () => {
+                bgVideo.playbackRate = 0.5;
+            });
+        }
     }
 
     let isUserPlaying = false;
