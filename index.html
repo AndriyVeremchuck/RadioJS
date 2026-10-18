@@ -114,36 +114,23 @@
             text-decoration: none;
             display: inline-block;
             line-height: 1;
+            color: #ffd700;
+            transform: rotate(-2deg) scaleX(1.82);
             transform-origin: center;
-            animation: portfolioGlowCycle 4s ease-in-out infinite;
-            transition: filter .3s;
+            transition: transform .35s cubic-bezier(.2,.8,.2,1), text-shadow .35s, color .35s;
+            text-shadow: 0 0 14px rgba(255, 215, 0, 0.55), 0 2px 14px rgba(245, 158, 11, 0.4);
         }
 
         .top-nav .portfolio-badge:hover {
-            filter: brightness(1.2);
+            transform: rotate(0deg) scaleX(1.92) scaleY(1.08);
+            color: #ffffff;
+            text-shadow: 0 0 18px rgba(255, 255, 255, 0.8), 0 0 26px rgba(255, 215, 0, 0.7);
         }
 
         @media (max-width: 640px) {
             .top-nav .portfolio-badge {
                 font-size: clamp(24px, 5.5vw, 32px);
-            }
-        }
-
-        @keyframes portfolioGlowCycle {
-            0% {
-                transform: rotate(-3deg) scaleX(1.82) scaleY(1);
-                color: #ffd700;
-                text-shadow: 0 0 14px rgba(255, 215, 0, 0.65), 0 2px 14px rgba(245, 158, 11, 0.45);
-            }
-            50% {
-                transform: rotate(2.5deg) scaleX(1.95) scaleY(1.08);
-                color: #ffffff;
-                text-shadow: 0 0 18px rgba(255, 255, 255, 0.95), 0 0 28px rgba(255, 215, 0, 0.8);
-            }
-            100% {
-                transform: rotate(-3deg) scaleX(1.82) scaleY(1);
-                color: #ffd700;
-                text-shadow: 0 0 14px rgba(255, 215, 0, 0.65), 0 2px 14px rgba(245, 158, 11, 0.45);
+                transform: rotate(-2deg) scaleX(1.5);
             }
         }
 
@@ -1180,15 +1167,6 @@
     audioPlayer.addEventListener('error', (e) => {
         handlePlayError(e);
     });
-
-    const pBadge = document.querySelector('.portfolio-badge');
-    if (pBadge) {
-        pBadge.addEventListener('pointerenter', () => {
-            const sign = Math.random() < 0.5 ? -1 : 1;
-            const deg = (sign * (1.8 + Math.random() * 2.7)).toFixed(1);
-            pBadge.style.setProperty('--hover-rot', `${deg}deg`);
-        });
-    }
 </script>
 
 </body>
