@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="Інтерфейс веб-плеєра RadioJS" width="90%">
+  <img src="docs/screenshot-v2.png" alt="Інтерфейс веб-плеєра RadioJS" width="90%">
 </p>
 
 ---
