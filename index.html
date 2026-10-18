@@ -13,11 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0057b8;
+            --bg: #0b0b0d;
+            --surface: #151517;
+            --surface-hover: #1b1b1e;
+            --text: #ebe7de;
+            --muted: #8f8a80;
+            --line: #26262a;
             --accent: #ffd700;
-            --card-bg: #ffffff;
-            --card-hover: #ffffff;
-            --text: #1e293b;
+            --gold: #c7a76b;
+            --primary: #c7a76b;
         }
 
         * {
@@ -28,11 +32,12 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #070b19;
+            background-color: var(--bg);
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            background: radial-gradient(60rem 30rem at 85% -10%, rgba(199, 167, 107, 0.13), transparent 60%), var(--bg);
         }
 
         video#bg-video {
@@ -53,7 +58,7 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            background: rgba(7, 11, 25, 0.50);
+            background: radial-gradient(circle at 50% 20%, rgba(199, 167, 107, 0.08), transparent 70%), rgba(11, 11, 13, 0.72);
             z-index: 1;
             pointer-events: none;
         }
@@ -78,13 +83,13 @@
             min-height: 69px;
             z-index: 1000;
             box-sizing: border-box;
-            background: rgba(7, 11, 25, 0.90);
+            background: rgba(11, 11, 13, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-top: none;
             border-radius: 0 0 16px 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform .8s cubic-bezier(.16, 1, .3, 1);
             will-change: transform;
         }
@@ -115,18 +120,18 @@
         }
 
         .top-nav a {
-            color: #94a3b8;
+            color: var(--muted);
             text-decoration: none;
             font-size: 13px;
             transition: color .2s;
         }
 
         .top-nav a:hover {
-            color: var(--accent);
+            color: var(--text);
         }
 
         .top-nav .brand {
-            color: #ffffff;
+            color: var(--text);
             font-size: 12px;
             font-weight: 600;
             letter-spacing: .24em;
@@ -205,11 +210,11 @@
         }
 
         header h1 {
-            color: #ffffff;
+            color: var(--text);
             font-size: 2.4rem;
             font-weight: 800;
             letter-spacing: 0.5px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
             margin-bottom: 8px;
         }
 
@@ -218,7 +223,7 @@
         }
 
         header p {
-            color: #cbd5e1;
+            color: var(--muted);
             font-size: 1rem;
         }
 
@@ -229,10 +234,12 @@
         }
 
         .radio-item {
-            background-color: #999999;
+            background-color: rgba(21, 21, 23, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 16px;
             padding: 12px 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
             overflow: hidden;
             text-align: center;
             cursor: pointer;
@@ -243,24 +250,24 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid var(--line);
             user-select: none;
             will-change: transform;
             contain: content;
         }
 
         .radio-item:hover {
-            background-color: #a8a8a8;
+            background-color: rgba(27, 27, 30, 0.95);
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-            border-color: rgba(0, 87, 184, 0.6);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(199, 167, 107, 0.25);
+            border-color: var(--gold);
             z-index: 2;
         }
 
-        /* Затемнення інших карток на 10% під час відтворення */
+        /* Затемнення інших карток на 15% під час відтворення */
         body.is-playing .radio-item:not(.playing) {
-            opacity: 0.90;
-            filter: brightness(0.90);
+            opacity: 0.85;
+            filter: brightness(0.85);
         }
 
         body.is-playing .radio-item:not(.playing):hover {
@@ -272,8 +279,8 @@
 
         .radio-item.playing {
             border-color: #ffd700;
-            background: #ffffff;
-            box-shadow: 0 0 0 2px #ffd700, 0 0 22px rgba(255, 215, 0, 0.7), 0 0 32px rgba(0, 87, 184, 0.35);
+            background: #18181c;
+            box-shadow: 0 0 0 2px #ffd700, 0 0 24px rgba(255, 215, 0, 0.6), 0 0 36px rgba(199, 167, 107, 0.3);
             z-index: 5;
             opacity: 1 !important;
             filter: brightness(1) !important;
@@ -349,7 +356,8 @@
         .playing-indicator span {
             width: 3px;
             height: 14px;
-            background-color: #0057b8;
+            background-color: #ffd700;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
             border-radius: 2px;
             transform-origin: bottom;
             animation: barBounce 0.8s infinite ease-in-out alternate;
@@ -375,6 +383,8 @@
             align-items: center;
             justify-content: center;
             padding: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
         }
 
         .radio-item img {
@@ -390,13 +400,19 @@
 
         .radio-item p {
             font-size: 0.92rem;
-            font-weight: 700;
-            color: #0f172a;
+            font-weight: 600;
+            color: var(--text);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
             padding: 0 4px;
+            letter-spacing: 0.2px;
+        }
+
+        .radio-item.playing p {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
         }
 
         .radio-item * {
