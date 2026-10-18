@@ -66,17 +66,47 @@
             width: 100%;
             max-width: 1080px;
             margin: 0 auto;
-            padding: 24px 20px 40px;
+            padding: 72px 20px 40px;
         }
 
         .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(7, 11, 25, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+            transform: translateY(0);
+            transition: transform .45s cubic-bezier(.16, 1, .3, 1);
+            will-change: transform;
+        }
+
+        .top-nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        .top-nav::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background: transparent;
+        }
+
+        .top-nav-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            padding-bottom: 16px;
-            margin-bottom: 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
             position: relative;
         }
 
@@ -129,7 +159,10 @@
 
         @media (max-width: 640px) {
             .app-wrapper {
-                padding: 20px 16px 32px;
+                padding: 64px 16px 32px;
+            }
+            .top-nav-inner {
+                padding: 10px 16px;
             }
             .top-nav .portfolio-badge {
                 font-size: clamp(24px, 5.5vw, 32px);
@@ -389,15 +422,17 @@
 </video>
 <div class="page-overlay"></div>
 
-<div class="app-wrapper">
-    <nav class="top-nav" aria-label="Головна навігація">
+<nav class="top-nav" aria-label="Головна навігація">
+    <div class="top-nav-inner">
         <a class="brand" href="https://andriyveremchuck.github.io/">← ANDRIY <span style="color:var(--accent)">VEREMCHUCK</span></a>
         <div class="nav-center">
             <a class="portfolio-badge" href="https://andriyveremchuck.github.io/" aria-label="Portfolio">Portfolio</a>
         </div>
         <a href="https://github.com/AndriyVeremchuck/RadioJS" target="_blank" rel="noopener">GitHub ↗</a>
-    </nav>
+    </div>
+</nav>
 
+<div class="app-wrapper">
     <header>
         <h1>🎵 Радіо <span>УКРАЇНИ</span> 🇺🇦</h1>
     </header>
@@ -1187,6 +1222,57 @@
     audioPlayer.addEventListener('error', (e) => {
         handlePlayError(e);
     });
+
+    // Автоматичний схов плашки через 2 секунди та виїзд при наведенні миші
+    (() => {
+        const nav = document.querySelector('.top-nav');
+        if (!nav) return;
+
+        let hideTimer = null;
+        let isHovered = false;
+
+        const showNav = () => {
+            clearTimeout(hideTimer);
+            nav.classList.remove('hidden');
+        };
+
+        const scheduleHide = (delay = 2000) => {
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                if (!isHovered) {
+                    nav.classList.add('hidden');
+                }
+            }, delay);
+        };
+
+        // При заході на сторінку ховається через 2 секунди
+        scheduleHide(2000);
+
+        nav.addEventListener('pointerenter', () => {
+            isHovered = true;
+            showNav();
+        });
+
+        nav.addEventListener('pointerleave', () => {
+            isHovered = false;
+            scheduleHide(1200);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (e.clientY <= 55) {
+                showNav();
+            } else if (!isHovered && !nav.classList.contains('hidden') && e.clientY > 85) {
+                scheduleHide(800);
+            }
+        });
+
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches[0].clientY <= 55) {
+                showNav();
+                scheduleHide(3000);
+            }
+        }, { passive: true });
+    })();
 </script>
 
 </body>
