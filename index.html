@@ -63,7 +63,8 @@
         .app-wrapper {
             position: relative;
             z-index: 10;
-            max-width: 1076px;
+            width: 100%;
+            max-width: 1080px;
             margin: 0 auto;
             padding: 24px 20px 40px;
         }
@@ -127,6 +128,9 @@
         }
 
         @media (max-width: 640px) {
+            .app-wrapper {
+                padding: 20px 16px 32px;
+            }
             .top-nav .portfolio-badge {
                 font-size: clamp(24px, 5.5vw, 32px);
             }
